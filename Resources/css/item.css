@@ -1,0 +1,353 @@
+.middle{
+    border: 1px solid transparent;
+}
+
+
+.userbox{
+
+    margin-top:10px;
+    display:inline-block;
+    padding:10px;
+    background-color:transparent;
+    border-bottom:1px solid transparent;
+    border-top:1px solid transparent;
+    white-space:wrap;
+    width:100%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    position: relative;
+    border: 1px solid blue;
+        }
+        
+.each-user{
+   
+    margin:10px 0 0 10px;
+    border:1px solid transparent;
+    height:300px;
+    width:20%;
+    display:inline-block;
+    border-radius:4px;
+    background-color:white;
+    position:relative;
+          }
+
+
+.productname{
+ 
+  font-size:14px;
+  text-align: center;
+  align-items: center;
+  color:black;
+  word-spacing:2px;
+  font-weight:bold;
+  }
+          
+#followers-count{
+color:grey;
+font-size:0.8em; 
+position: relative;
+width: 100%;
+text-align: center;
+font-weight:bold;
+margin: 0 0 0 10px;
+font-family: "poppins",sans-serif;
+}
+    
+    
+.profileview{
+color:black;
+font-size: 0.8em;
+bottom:40px;
+width: 100%;
+text-align: center;
+font-weight:light;
+margin: 0 0 0 10px;
+letter-spacing:-0.4px;
+}
+
+
+.follow-unfollow{
+    border:1px solid transparent;
+    width:100%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+ }
+ 
+.justbtn{
+    color:var(--color-white);    
+    text-align:center;
+    text-decoration: none;
+    background-color:black;
+    padding:5px 10px;
+    background-color:#0E6EB8;
+    border-radius:3px;
+    border:1px solid transparent;   
+    font-family:'poppins',sans-serif;   
+    font-weight:bold;  
+    }
+  
+.deletebtn{
+    color:var(--color-white);
+    text-align:center;
+    text-decoration: none;
+    background-color:#B03060;
+    padding:5px 10px;
+    border-radius:3px;
+    border:1px solid transparent;  
+    font-family:'poppins',sans-serif;
+    font-weight:bold;
+    }  
+  
+
+    
+  
+
+ .image{
+ width:100%;
+ height:150px;
+ border-radius:5px 5px 0 0;
+ border-bottom:1px solid #cecece;
+ }
+
+
+
+
+ 
+.empty{
+    padding:10px 10px;
+    font-weight:bold;
+    font-size:0.9em;
+    font-family:'lato',sans-serif;
+    text-decoration:none;
+    border-radius:20px;
+    border:1px solid #cecece;
+    margin:20px 0 0 5px;
+    
+    }
+    .emptyname{
+    color:#005088;
+    font-size:0.85em;
+     }
+    
+    .checkmore {
+    background-color:black;
+    border-radius:20px;
+    border:1px solid white;
+    width:30%;
+    height:40px;
+    margin:0 0 0 80px;
+    color:white;
+    }
+    
+    .checkmore p{
+    color:white;
+    font-weight:bold;
+    font-size:0.9em;
+    font-family:'lato',sans-serif;
+    text-decoration:none;
+    text-align:center;
+    align-items:center;
+    margin:10px 0 0 0;
+    }
+    
+ a{
+   text-decoration:none;	
+ }
+
+.showw{
+    background-color: var(--color-white);
+    margin:30px 0 0 150px;
+    position:absolute;
+    padding:5px 20px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid transparent;
+}
+
+
+
+/* ---------------------------MEDIA QUERY FOR SMALL LAPTOPS AND BIG TABLETS-----------------*/
+
+@media screen and (max-width:1200px) {
+    .container{
+        width:96%;
+
+    }
+
+    main .container{
+        grid-template-columns: 5rem auto 30vw;
+        gap: 1rem;
+    }
+   
+    .left{
+        width: 5rem;
+        z-index: 5;
+    }
+
+    main .container .left .profile{
+        display: none;
+    }
+
+    .container .left .profile .handle{
+        display: none;
+      }
+  
+
+    .sidebar h3{
+        display: none;
+    }
+
+    .left .btn{
+        display: none;
+    }
+
+}
+
+/* ---------------------------MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES-----------------*/
+
+@media screen and (max-width:992px) {
+
+    nav .search-bar{
+        display: none;
+    }
+
+    nav .bottom-menu-nav{
+        display: none;
+    }
+    main .container{
+        grid-template-columns: 0 auto 5rem;
+        gap: 0;
+    }
+
+    main .container .left{
+        grid-column:3/4 ;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+    main .container .middle{
+        grid-column: 1/3;
+        position: absolute;
+    }
+
+    main .container .right{
+        display: none;
+    }
+
+    .showw{
+        background-color: var(--color-white);
+        padding:5px 30px;
+        border-radius:30px;
+        display:flex;
+        margin:10px 0 0 25%;
+        align-items:center;
+        justify-content:center;
+         width:50%;
+        position:relative;
+        border:1px solid transparent;
+        font-size:0.8em;
+        font-weight:bold;
+        font-family:"mukta", sans-serif;
+        color:black;
+    }
+ 
+
+}
+
+@media screen and (max-width:500px) {
+     
+    body{
+        font-family: "mukta", sans-serif;
+       color: var(--color-dark);
+       background-color:white;
+       overflow-x: hidden;
+       text-decoration: none;
+    }
+
+
+    nav{
+        padding: 0.2rem;
+    }
+
+    .bar{
+        display: block;
+    }
+
+   
+    main{
+        position:relative ;
+        top:6.5em;
+    }
+    
+
+    main .container{
+        grid-template-columns: 0 auto 0;
+       
+    }
+
+    main .container .middle{ 
+        position:relative ;
+        border:1px solid transparent;
+         bottom:60px;
+    }
+    main .container .left{
+        grid-column:1/4 ;
+        left: 0;
+        width:0;
+        top: 50px;
+        overflow-y:scroll;
+        z-index:200;
+    }
+
+    main .container .left .profile{
+        display:block;
+        column-gap: 0;
+        border-radius: 0;
+    }
+
+    .left .sidebar{
+        margin-top:0;
+        border-radius: 0;
+
+    }
+    .sidebar h3{
+        display: block;
+    }
+    .left .btn{
+        display: block;
+    }
+
+               
+    .each-user{
+           
+        margin:5px;
+        width:45%;
+        height:230px;
+        border: 1px solid #cecece;
+        border-radius:4px;
+        position:relative;
+        background-color: white;
+  
+      }
+    
+      .shopname{
+     
+        font-size:12px;
+      }
+  .image{
+      width:100%;
+      height:120px;
+      border-radius:5px 5px 0 0;
+      border-bottom:1px solid #cecece;
+}
+
+.showw{
+    background-color: var(--color-light);
+}
+
+}
