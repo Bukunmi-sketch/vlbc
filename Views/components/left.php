@@ -35,7 +35,7 @@
        
         <div id="myDropdown" class="dropdown-content">
            <a href="add_member.php" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>Add members </h3> </a>
-           <a href="allmembers.php" class="menu-item"> <h3>Members details </h3> </a>
+           <a href="all_members.php" class="menu-item"> <h3>Members details </h3> </a>
          </div>
 
          <a href="units.php"  class="menu-item" onclick="manage()">

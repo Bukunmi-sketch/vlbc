@@ -39,7 +39,7 @@ $registered_date = $userInfo['date'];
                 </div>
                 <div class="max-sub-container">
 
-                    <form action="#" enctype="multipart/form-data">
+                    <form class="create" action="#" enctype="multipart/form-data">
                         <div class="error"></div>
                         <div class="success"></div>
 
@@ -62,7 +62,7 @@ $registered_date = $userInfo['date'];
 
                                 <div class="inputbox-details">
                                     <label for="lname">Lastname</label>
-                                    <input type="number"  name="lname" placeholder="Lastname" value=" " autofocus>
+                                    <input type="text"  name="lname" placeholder="Lastname" value=" " autofocus>
                                 </div>
                             </div>
 
@@ -140,7 +140,7 @@ $registered_date = $userInfo['date'];
 
 
 
-
+                            <div class="error"></div>
                             <div class="button-details">
                                 <input type="hidden" name="admin" value="<?php echo $sessionid; ?> " autofocus>
                                 <button class="submit" name="login">Add Member</button>
@@ -159,7 +159,7 @@ $registered_date = $userInfo['date'];
         </div>
     </main>
 
-    <script src="../Resources/add_member.js"></script>
+    <script src="../Resources/js/add_member.js"></script>
     <script src="../Resources/js/sidebar.js"></script>
 
     <script type="text/javascript">

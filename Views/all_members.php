@@ -49,7 +49,7 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
 <html lang="en">
 
 <head>
-  <title>Customers Order</title>
+  <title>All members</title>
   <?php include '../Includes/metatags.php'; ?>
 
   <link rel="stylesheet" type="text/css" href="../Resources/css/left.css">
@@ -81,7 +81,7 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
       <div class="middle">
         <?php if ($statement->rowCount() > 0) : ?>
 
-          <h5>Note all orders are included here including unpaid,paid,unconfirmed ,delivered ,undeliverd orders </h5>
+          <h5>No members have been registereed </h5>
           <form action="orders.php"></form>
           <div class="inputbox-details">
             <label for="sortorders"> Sort orders by old or latest</label>
@@ -97,12 +97,12 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
               <thead>
                 <tr>
                   <th> Action </th>
-                  <th> Order id</th>
-                  <th>Customer Name</th>
-                  <th>Customers Phone No</th>
-                  <th>Customers Request item</th>
-                  <th>Customers Email</th>
-                  <th>Amount Paid</th>
+                  <th>#</th>
+                  <th>Members Name</th>
+                  <th>Members contact</th>
+                  <th>Email</th>
+                  <th>gender</th>
+                  <th>Residence</th>
                   <th>Customers State</th>
                   <th>Local Gov</th>
                   <th>Customers Address</th>

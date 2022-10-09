@@ -1,6 +1,6 @@
 <?php
 
-include '../Models/Members.php';
+include '../Models/Member.php';
 include '../Models/Uploadimg.php';
 include '../Models/Auth.php';
 
@@ -36,17 +36,17 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $picture=$_FILES['product_image']["name"];
     $dpsize=$_FILES['product_image']['size'];
     $dptemp=$_FILES['product_image']['tmp_name']; 
-    $dir="../Images/product-img/";
+    $dir="../images/member-img/";
     $dirfile=$dir.basename($picture);
     
 
-    if(!empty($firstname) && !empty($lastname) && !empty($mobile) && !empty($available) && !empty($prev_church) && !empty($gender) && !empty($residence) && !empty($birthday) && !empty($birthday) && !empty($state_origin) && !empty($picture) ){
-        if($productInstance->IfMemberExisted($firstname, $lastname, $mobile)){ 
+    if(!empty($firstname) && !empty($lastname) && !empty($mobile) && !empty($prev_church) && !empty($gender) && !empty($residence) && !empty($birthday) && !empty($state_origin) && !empty($picture) ){
+        if($memberInstance->IfMemberExisted($firstname, $lastname, $mobile)){ 
           
                    if($imgInstance->imgextension($picture)){
                      if($imgInstance->largeImage($dpsize)){
                          if($imgInstance->moveImage($dptemp, $dirfile)){
-                             if(  $productInstance->createProducts($admin_id, $picture, $firstname, $lastname, $mobile, $email, $available, $date) ){
+                             if(  $memberInstance->createMembers($admin_id, $picture, $firstname, $lastname, $email, $mobile, $gender, $residence, $prev_church, $origin, $ministry, $birthday, $date) ){
                             
                                 echo "success";
                             }else{
@@ -64,28 +64,17 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         }else{
             echo "this member has been registered";
         }   
-     }elseif( !empty($firstname) && !empty($lastname) && !empty($mobile) && !empty($available) && !empty($prev_church) && !empty($gender) && !empty($residence) && !empty($birthday) && !empty($birthday) && !empty($state_origin)  && empty($picture) ){
+     }elseif( !empty($firstname) && !empty($lastname) && !empty($mobile)  && !empty($prev_church) && !empty($gender) && !empty($residence) && !empty($birthday) && !empty($state_origin)  && empty($picture) ){
          $picture="null.png";
-        if($productInstance->IfMemberExisted($firstname, $lastname, $mobile)){ 
-          
-            if($imgInstance->imgextension($picture)){
-              if($imgInstance->largeImage($dpsize)){
-                  if($imgInstance->moveImage($dptemp, $dirfile)){
-                      if(  $productInstance->createProducts($admin_id, $picture, $firstname, $lastname, $mobile, $email, $available, $date) ){
+        if($memberInstance->IfMemberExisted($firstname, $lastname, $mobile)){ 
+                      
+                      if(  $memberInstance->createMembers($admin_id, $picture, $firstname, $lastname, $email, $mobile, $gender, $residence, $prev_church, $state_origin, $ministry, $birthday, $date) ){
                      
                          echo "success";
                      }else{
                          echo "an error occurred while uploading the image";
                      }
-                  }else{
-                      echo "file failed to move";
-                  }
-              }else{
-                  echo "image is too large";
-              }     
-       }else{
-          echo 'file is not an image';
-       }
+                 
  }else{
      echo "this member has been registered";
  }   
