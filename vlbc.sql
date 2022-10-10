@@ -244,7 +244,11 @@ CREATE TABLE IF NOT EXISTS `unit_ministry` (
 
 
  
-     ALTER TABLE `members`
+     ALTER TABLE `announcement`
+     ADD `active_status` varchar(255) NOT NULL;
+    -- CHANGE `announcement_id` `id` int(10),
+    -- CHANGE `times` `date` timestamp,
+    -- ADD `typefor` varchar(255) NOT NULL;
     -- CHANGE `mobile` `mobile` bigint(10),
     -- CHANGE `id` `id` int(11);
 

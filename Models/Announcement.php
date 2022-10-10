@@ -1,9 +1,8 @@
 <?php
 
-//namespace Users;
 
 require '../Includes/db.inc.php';
- // session_start();
+ 
 
    class Announcement{
         private $db;
@@ -13,55 +12,47 @@ require '../Includes/db.inc.php';
             $this->db= $conn;
         }
 
-        //create new products
-        public function createOrder($order_id, $customers_firstname, $customers_lastname, $email, $customers_lga, $customers_address , $state , $cart_items , $phone_no,  $additional_info,   $payment_status, $order_status, $amount, $status, $created_at){  
-               try{
-                
-                   $sql="INSERT INTO orders(order_id, customers_firstname, customers_lastname, email ,customers_lga, customers_address , state ,cart_items ,    phone_no,   additional_info,    payment_status, order_status, amount, notify_status, created_at )  VALUES  (:order_id, :customers_firstname, :customers_lastname, :email, :customers_lga, :customers_address, :state, :cart_items ,  :phone_no,  :additional_info,   :payment_status, :order_status, :amount, :status, :created_at  )";
-                     $stmt= $this->db->prepare($sql);
-                     $result=  $stmt->execute([
-                        ":order_id"=>$order_id,
-                        ":customers_firstname" => $customers_firstname,
-                        ":customers_lastname" => $customers_lastname,
-                        ":email" => $email,
-                        ":customers_lga" => $customers_lga,
-                        ":customers_address" => $customers_address , 
-                        ":state" =>$state,
-                        ":cart_items"=>$cart_items  ,   
-                        ":phone_no" => $phone_no,   
-                        ":additional_info"=>    $additional_info,
-                        ":payment_status"=>     $payment_status,
-                        ":order_status"=> $order_status,
-                        ":amount"=>$amount,
-                        ":status"=>$status,
-                        ":created_at" => $created_at
-                   ]);
-   
-                   if($result){
-                    return true;
-                       }else{
-                  return false;
-                   }
-               } catch(PDOException $e){
-                echo $e->getMessage();
-               }
-           }   //create()
+        //create new category
+        public function createAnnouncement($title, $content, $typefor,$date, $picture,$status){  
+          try{
+              
+              $sql="INSERT INTO announcement(title, content, typefor, date, img, active_status) VALUES (:title, :content, :typefor, :date, :picture,:status )";
+                $stmt= $this->db->prepare($sql);
+                 $result=  $stmt->execute([
+                   ":title"=>$title,
+                   ":content" =>$content,
+                   ":typefor" =>$typefor,
+                   ":date" =>$date,
+                   ":picture" =>$picture,
+                   ":status" =>$status
+              ]);
+
+              if($result){
+                return true;
+                  }else{
+               //   echo "error while creating category";
+               return false;
+              }
+          } catch(PDOException $e){
+              echo  $e->getMessage(); 
+          }
+        }   //create()
 
 
 
-           public function getOrders()
+           public function getAnnouncement()
            {             
-             $sql="SELECT * FROM orders";
+             $sql="SELECT * FROM Announcement";
              $stmt=$this->db->prepare($sql);
              $stmt->execute();
              return $stmt;
            }
 
-           public function deleteOrder($orderid){
+           public function deleteAnnoucement($id){
             try{
-                $sqldelete='DELETE FROM orders WHERE order_id=:orderid';
+                $sqldelete='DELETE FROM Announcement WHERE id=:id';
                 $stmt=$this->db->prepare($sqldelete);
-                $stmt->bindParam(":orderid", $orderid);
+                $stmt->bindParam(":id", $id);
                 if($stmt->execute()){
                   return true;
                 }else{
@@ -73,11 +64,12 @@ require '../Includes/db.inc.php';
 
            }
 
-           public function getOrdersById($orderid){
+           public function getActiveAnnouncement($id){
             try{
-                $sql="SELECT * FROM orders WHERE order_id=:orderid";
+                $status="true";
+                $sql="SELECT * FROM announcement WHERE active_status=:status";
                 $stmt=$this->db->prepare($sql);
-                $stmt->bindParam(":orderid", $orderid);
+                $stmt->bindParam(":status", $status);
                 $stmt->execute();
                 return $stmt;
             }catch(PDOException $e){
@@ -85,11 +77,11 @@ require '../Includes/db.inc.php';
             }
            }
 
-          public function markDelivered($orderid)
+          public function blockAnnouncement($id)
           {
-            $query="UPDATE orders SET order_status='delivered' WHERE order_id=:orderid ";
+            $query="UPDATE announcement SET active_status='false' WHERE id=:id ";
             $stmt=$this->db->prepare($query);
-            $stmt->bindParam(':orderid',$orderid );
+            $stmt->bindParam(':id',$id );
             if($stmt->execute()){
               return true;
             }else{
@@ -97,56 +89,6 @@ require '../Includes/db.inc.php';
             }
           }
           
-
-          public function getPaymentStatus($status)
-          {
-            $sql="SELECT * FROM orders WHERE payment_status=:status";
-            $stmt=$this->db->prepare($sql);
-            $stmt->bindParam(":status", $status);
-            $stmt->execute();
-            return $stmt;
-
-          }
-
-          public function confirmedOrders($confirm){
-            $sql="SELECT * FROM orders WHERE payment_confirmation=:confirmed";
-            $stmt=$this->db->prepare($sql);
-            $stmt->bindParam(":confirmed", $confirm);
-            $stmt->execute();
-            return $stmt;
-          
-          }
-
-          public function orderStatus($status){
-            $sql="SELECT * FROM orders WHERE order_status=:status";
-            $stmt=$this->db->prepare($sql);
-            $stmt->bindParam(":status", $status);
-            $stmt->execute();
-            return $stmt;
-          
-          }
-
-          public function paymentType($type){
-            $sql="SELECT * FROM orders WHERE payment_type=:type";
-            $stmt=$this->db->prepare($sql);
-            $stmt->bindParam(":type", $type);
-            $stmt->execute();
-            return $stmt;
-          }
-
-          public function countUndeliveredOrders(){
-            $query="SELECT * FROM orders WHERE  order_status=:status ";
-            $status="undelivered";
-            $prepnotify=$this->db->prepare($query);
-            $prepnotify->bindParam(':status',$status );
-            $prepnotify->execute();
-            return $prepnotify->rowCount();
-          }      
-
-        
-    
-
-
 }
 
 ?>
