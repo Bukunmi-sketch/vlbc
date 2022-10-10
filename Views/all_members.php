@@ -2,8 +2,8 @@
 session_start();
 ob_start();
 
-// include '../Includes/inc.php';
-include '../Includes/autoload.php';
+include '../Includes/inc.php';
+//include '../Includes/autoload.php';
 include './auth/redirect.php';
 
 $sessionid = $_SESSION['id'];
@@ -13,30 +13,7 @@ $firstname = $userInfo['firstname'];
 $lastname = $userInfo['lastname'];
 $registered_date = $userInfo['date'];
 
-$orderInstance = new Order($conn);
-
-$sql = "SELECT * FROM orders";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-
-//$stmt=$orderInstance->getOrders();
-$stmt->fetchAll(PDO::FETCH_ASSOC);
-$number_of_result = $stmt->rowCount();
-
-//define total number of results you want per page  
-$results_per_page = 10;
-
-//determine the total number of pages available  
-$totalPages = ceil($number_of_result / $results_per_page);
-
-//determine which page number visitor is currently on  
-if (!isset($_GET['page'])) {
-  $page = 1;
-} else {
-  $page = $_GET['page'];
-}
-//determine the sql LIMIT starting number for the results on the displaying page  
-$startFrom = ($page - 1) * $results_per_page;
+//$memberInstance = new User\Member($conn);
 
 if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
   $notifyInstance->readNotification();
@@ -67,110 +44,67 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
       <?php
       include './components/left.php';
 
-      //    $sort=$_POST['sortorders'];
-
-      $pagesql = "SELECT * FROM orders ORDER BY id ASC LIMIT " . $startFrom . ',' . $results_per_page;
-      $statement = $conn->prepare($pagesql);
-      $statement->execute();
-      $orderData = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $statement=$memberInstance->getMembers();
+      $memberData=$statement->fetchAll(PDO::FETCH_ASSOC);
 
 
+      $g=1;
       ?>
-
+ 
 
       <div class="middle">
         <?php if ($statement->rowCount() > 0) : ?>
 
           <h5>No members have been registereed </h5>
           <form action="orders.php"></form>
-          <div class="inputbox-details">
-            <label for="sortorders"> Sort orders by old or latest</label>
-            <select name="sortorders">
-              <option value="ASC">Old</option>
-              <option value="DESC">Latest</option>
-            </select>
-            </form>
-          </div>
-
+       
           <div class="table-container">
             <table id="example">
               <thead>
                 <tr>
+                  <th>S/N</th>
                   <th> Action </th>
-                  <th>#</th>
                   <th>Members Name</th>
                   <th>Members contact</th>
+                  <th>Ministry</th>
                   <th>Email</th>
                   <th>gender</th>
                   <th>Residence</th>
-                  <th>Customers State</th>
-                  <th>Local Gov</th>
-                  <th>Customers Address</th>
-                  <th>Payment status</th>
-                  <th>Payment Type</th>
-                  <th>Order Status</th>
-                  <th>Date order was placed</th>
-                  <th>Time order was placed</th>
-                  <th>Additional Info</th>
-                  <th>Transaction Reference</th>
-                  <th>Payment Confirmation</th>
+                  <th>Birthday</th>
+                  <th>State of Origin</th>
+                  <th>Previous Church</th>
+                  <th>Registered Date</th>
+                  <th>Time registered</th>
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($orderData as $orders) : ?>
+                <?php foreach ($memberData as $members) : ?>
                   <div>
-                    <tr class="trr" id="eachorder<?php echo  "{$orders['order_id']}"; ?>">
+                    <tr class="trr" id="eachorder<?php echo  "{$members['id']}"; ?>">
+                    <td> <?php echo $g++; ?>   </td>
                       <form action="" class="order-modify">
                         <td>
-                          <!--<button class="editbtn">Edit</button>--> <button data-identity="<?php echo  "{$orders['order_id']}"; ?>" class="deletebtn">Delete</button>
+                          <!--<button class="editbtn">Edit</button>--><button data-identity="<?php echo  "{$members['id']}"; ?>" class="deletebtn">Delete</button>
                         </td>
-                      </form>
-                      <td> <?php echo  "{$orders['order_id']}"; ?> </td>
-                      <td> <?php echo  "{$orders['customers_firstname']} {$orders['customers_lastname']}"; ?> </td>
-                      <td> <?php echo  "{$orders['phone_no']}"; ?> </td>
-                      <td> <?php echo  "{$orders['cart_items']}"; ?> </td>
-                      <td> <?php echo  "{$orders['email']}"; ?> </td>
-                      <td> <?php echo  "{$orders['amount']}"; ?> </td>
-                      <td> <?php echo  "{$orders['state']}"; ?> </td>
-                      <td> <?php echo  "{$orders['customers_lga']}"; ?> </td>
-                      <td> <?php echo  "{$orders['customers_address']}"; ?> </td>
-                      <td> <?php echo  "{$orders['payment_status']}"; ?> </td>
-                      <td> <?php echo  "{$orders['payment_type']}"; ?> </td>
-                      <td> <?php echo  "{$orders['order_status']}"; ?> </td>
-                      <td> <?php echo date("D,F j Y",  strtotime($orders['created_at'])); ?> </td>
-                      <td> <?php echo date("H:i a",  strtotime($orders['created_at'])); ?> </td>
-                      <td> <?php echo  "{$orders['additional_info']}"; ?> </td>
-                      <td> <?php echo  "{$orders['transaction_ref']}"; ?> </td>
-                      <td> <?php echo  "{$orders['payment_confirmation']}"; ?> </td>
+                      </form>                     
+                      <td> <?php echo  "{$members['firstname']} {$members['lastname']}"; ?> </td>
+                      <td> <?php echo  "{$members['mobile']}"; ?> </td>
+                      <td> <?php echo  "{$members['ministry']}"; ?> </td>
+                      <td> <?php echo  "{$members['email']}"; ?> </td>
+                      <td> <?php echo  "{$members['gender']}"; ?> </td>
+                      <td> <?php echo  "{$members['residence']}"; ?> </td>
+                      <td> <?php echo  "{$members['birthday']}"; ?> </td>
+                      <td> <?php echo  "{$members['origin']}"; ?> </td>
+                      <td> <?php echo  "{$members['previous_church']}"; ?> </td>
+                      <td> <?php echo date("D,F j Y",  strtotime($members['date'])); ?> </td>
+                      <td> <?php echo date("H:i a",  strtotime($members['date'])); ?> </td>
                     </tr>
                   </div>
                 <?php endforeach ?>
               </tbody>
             </table>
           </div>
-          <div class="next-prev">
-            <div class="move-button">
-              <?php if ($page >= 2) : ?>
-                <a href='orders.php?page=<?php echo ($page - 1); ?>'> Prev </a>
-              <?php endif ?>
-
-              <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-                <?php if ($i == $page) : ?>
-                  <a href="orders.php?page=<?php echo $i; ?>" class="active"> <?php echo $i; ?> </a>
-                <?php else : ?>
-                  <a href="orders.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
-                <?php endif ?>
-              <?php endfor ?>
-
-              <?php if ($page < $totalPages) : ?>
-                <a href='orders.php?page=<?php echo ($page + 1); ?>'> Next </a>
-              <?php endif ?>
-            </div>
-            <div class="inline">
-              <input id="page" type="number" min="1" max="<?php echo $totalPages ?>" placeholder="<?php echo $page . "/" . $totalPages; ?>" required>
-              <button onClick="go2Page();">Go</button>
-            </div>
-          </div>
+        
 
         <?php else : ?>
           <h4>there are no orders available</h4>

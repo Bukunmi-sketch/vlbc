@@ -52,7 +52,7 @@
            <a href="allmembers.php" class="menu-item"> <h3> Usher </h3> </a>
          </div>
 
-        <a href="units.php"  class="menu-item">
+        <a href="announcement.php"  class="menu-item">
             <h3>Announcement</h3>
         </a>
 

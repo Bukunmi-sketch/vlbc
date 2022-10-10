@@ -21,7 +21,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Ministry / Unit</title>
+    <title>Announcement</title>
     <?php include '../Includes/metatags.php' ; ?>
 
               <link rel="stylesheet" type="text/css" href="../Resources/css/left.css"> 
@@ -45,7 +45,7 @@
         <form action="#" method="POST">
             <div class="error"></div>
         <div class="inputbox-details">
-             <input type="text" id="passa" name="unit_name" value="" placeholder="create a unit or Ministry" autofocus required>
+             <input type="text" id="passa" name="unit_name" value="" placeholder="create an announcement" autofocus required>
          </div>
 
          <div class="button-details">

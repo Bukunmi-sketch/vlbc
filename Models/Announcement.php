@@ -5,7 +5,7 @@
 require '../Includes/db.inc.php';
  // session_start();
 
-   class Order{
+   class Announcement{
         private $db;
        
         public function __construct($conn)

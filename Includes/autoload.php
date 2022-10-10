@@ -16,7 +16,7 @@ try {
     $userInstance= new User($conn);
     $loginInstance= new Login($conn);
     $registerInstance= new Register($conn);
-    $orderInstance = new Order($conn);
+    $memberInstance = new User\Member($conn);
     //$customersInstance = new Customer($conn);
     $categoryInstance = new Category($conn);
     $reportInstance = new Report($conn);
