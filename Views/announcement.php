@@ -51,40 +51,45 @@ $name = $firstname . $lastname;
           <form action="#" method="POST">
             <div class="error"></div>
 
-            <div class="images">
-                                <label for="productImage">Add Image</label>
-                                <div id="upload">
-                                    <img src="" onClick="trigger()" id="profileDisplay">
-                                    <input type="file" name="product_image" onchange="displayImage(this)" id="capture" style="display:none">
-                                    <i class="fa fa-camera" id="camera"></i>
-                                </div>
+            <div class="flex-inbox">
+
+              <div class="images">
+                <label for="productImage">Add Image</label>
+                <div id="upload">
+                  <img src="" onClick="trigger()" id="profileDisplay">
+                  <input type="file" name="file_image" onchange="displayImage(this)" id="capture" style="display:none">
+                  <i class="fa fa-camera" id="camera"></i>
+                </div>
+              </div>
+
+
+              <div class="inputbox-details">
+                <label for="ministry">Announcement for</label>
+                <select name="typefor">
+                  <?php
+                  $stmt = $unitInstance->getunitMinistry();
+                  $unitData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                  if ($stmt->rowCount() > 0) :
+                  ?>
+                    <?php foreach ($unitData as $unit) : ?>
+                      <option value="<?php echo  "{$unit['name']}"; ?> "><?php echo  "{$unit['name']}"; ?> </option>
+                    <?php endforeach ?>
+                  <?php else : ?>
+                    <option value="">No unit, create Now!</option>
+                  <?php endif ?>
+                </select>
+              </div>
             </div>
 
 
+
             <div class="inputbox-details">
-              <label for="ministry">Announcement for</label>
-              <select name="typefor">
-                <?php
-                $stmt = $unitInstance->getunitMinistry();
-                $unitData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                if ($stmt->rowCount() > 0) :
-                ?>
-                  <?php foreach ($unitData as $unit) : ?>
-                    <option value="<?php echo  "{$unit['name']}"; ?> "><?php echo  "{$unit['name']}"; ?> </option>
-                  <?php endforeach ?>
-                <?php else : ?>
-                  <option value="">No unit, create Now!</option>
-                <?php endif ?>
-              </select>
+              <label for="title">Title</label>
+              <input type="text" name="title" placeholder="" style="text-transform: uppercase;" value=" " autofocus>
             </div>
 
             <div class="inputbox-details">
-                   <label for="title">Title</label>
-                   <input type="text" name="title" placeholder="" style="text-transform: uppercase;" value=" " autofocus>
-            </div>
-
-            <div class="inputbox-details">
-            <label for="title">Content</label>
+              <label for="title">Content</label>
               <textarea name="content" value="" required> </textarea>
             </div>
 
@@ -144,20 +149,20 @@ $name = $firstname . $lastname;
   <script src="../Resources/js/createannounce.js"></script>
 
   <script type="text/javascript">
-        function trigger(e) {
-            document.querySelector("#capture").click();
-        }
+    function trigger(e) {
+      document.querySelector("#capture").click();
+    }
 
-        function displayImage(e) {
-            if (e.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
-                }
-                reader.readAsDataURL(e.files[0]);
-            }
+    function displayImage(e) {
+      if (e.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
         }
-    </script>
+        reader.readAsDataURL(e.files[0]);
+      }
+    }
+  </script>
 </body>
 
 </html>

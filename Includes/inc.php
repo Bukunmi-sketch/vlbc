@@ -2,7 +2,7 @@
 
             //import users class file
 
-use Users\Member;
+//use Users\Member;
 
     include '../Models/Auth.php';  
     include '../Models/User.php';  
@@ -14,7 +14,7 @@ use Users\Member;
     include '../Models/Unit.php';
     include '../Models/Report.php';
     include '../Models/Notification.php';
-    include '../Models/Payment.php';
+    include '../Models/Uploadimg.php';
     include '../Models/Dashboard.php';
       // create of object of the user class
     $authInstance= new Auth($conn);
@@ -23,14 +23,13 @@ use Users\Member;
     $registerInstance= new Register($conn);
     $memberInstance = new User\Member($conn);
     $announceInstance = new Announcement($conn);
-    //$customersInstance = new Customer($conn);
+    $imgInstance= new Uploadimg($conn);
     $unitInstance = new Unit($conn);
     $reportInstance = new Report($conn);
-    $payInstance = new Payment($conn);
     $notifyInstance = new Notification($conn);
     $dashboardInstance =new Dashboard($conn);
     
-    $dirfile="../Images/product-img/";
+    //$dirfile="../Images/product-img/";
 
 /*
  /";

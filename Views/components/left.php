@@ -3,7 +3,7 @@
     <!------------------------for keeping profile and remove button for sidenav----------------- ---------------->
     <div class="image-removebox">
 
-      <a href="mypage.php" class="profile">
+      <a href="mypage" class="profile">
            <div class="profile-photo">
               <img src="" alt=""  class="profile-photo">
            </div>
@@ -24,7 +24,7 @@
      <div class="sidebar">
 
         
-        <a href="dashboard.php"  class="menu-item">
+        <a href="dashboard"  class="menu-item">
             <h3>Dashboard</h3>
         </a>
 
@@ -34,36 +34,40 @@
 
        
         <div id="myDropdown" class="dropdown-content">
-           <a href="add_member.php" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>Add members </h3> </a>
-           <a href="all_members.php" class="menu-item"> <h3>Members details </h3> </a>
+           <a href="add_member" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>Add members </h3> </a>
+           <a href="all_members" class="menu-item"> <h3>Members details </h3> </a>
          </div>
 
-         <a href="units.php"  class="menu-item" onclick="manage()">
+         <a href="units"  class="menu-item" onclick="manage()">
             <h3>Ministry/Units</h3>
         </a>
 
         <div id="manage" class="dropdown-content">
-           <a href="add_member.php" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>WMU</h3> </a>
-           <a href="allmembers.php" class="menu-item"> <h3>Youth </h3> </a>
-           <a href="allmembers.php" class="menu-item"> <h3> MMU </h3> </a>
-           <a href="allmembers.php" class="menu-item"> <h3> Choir </h3> </a>
-           <a href="allmembers.php" class="menu-item"> <h3> BSF </h3> </a>
-           <a href="allmembers.php" class="menu-item"> <h3> Youth </h3> </a>
-           <a href="allmembers.php" class="menu-item"> <h3> Usher </h3> </a>
+           <a href="add_member" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>WMU</h3> </a>
+           <a href="allmembers" class="menu-item"> <h3>Youth </h3> </a>
+           <a href="allmembers" class="menu-item"> <h3> MMU </h3> </a>
+           <a href="allmembers" class="menu-item"> <h3> Choir </h3> </a>
+           <a href="allmembers" class="menu-item"> <h3> BSF </h3> </a>
+           <a href="allmembers" class="menu-item"> <h3> Youth </h3> </a>
+           <a href="allmembers" class="menu-item"> <h3> Usher </h3> </a>
          </div>
 
-        <a href="announcement.php"  class="menu-item">
+        <a href="javascript:void(0)"  class="menu-item" onclick="announce()">
             <h3>Announcement</h3>
         </a>
+        <div id="announce" class="dropdown-exams">
+           <a href="announcement" class="menu-item"> <h3>Add Announcement</h3> </a>
+           <a href="view_announce" class="menu-item"> <h3>View Announcement</h3> </a>
+         </div>
 
         <a href="javascript:void(0)" class="menu-item" onclick="exams()">
             <h3>Teens & Children</h3>
         </a>
 
         <div id="exams" class="dropdown-exams">
-           <a href="send-email.php" class="menu-item"> <h3>Add Teenager/Children</h3> </a>
-           <a href="send-textmsg.php" class="menu-item"> <h3>Teenagers Details</h3> </a>
-           <a href="send-textmsg.php" class="menu-item"> <h3>Children Details</h3> </a>
+           <a href="send-email" class="menu-item"> <h3>Add Teenager/Children</h3> </a>
+           <a href="send-textmsg" class="menu-item"> <h3>Teenagers Details</h3> </a>
+           <a href="send-textmsg" class="menu-item"> <h3>Children Details</h3> </a>
          </div>
                                  
 
@@ -72,8 +76,8 @@
         </a>
 
         <div id="attendance"  class="dropdown-attendance">
-           <a href="add_visitor.php" class="menu-item"> <h3>Add Visitor</h3> </a>
-           <a href="visitor_details.php" class="menu-item"> <h3>Visitor Details</h3> </a>
+           <a href="add_visitor" class="menu-item"> <h3>Add Visitor</h3> </a>
+           <a href="visitor_details" class="menu-item"> <h3>Visitor Details</h3> </a>
          </div>
 
        
@@ -82,8 +86,8 @@
         </a>
        
         <div id="members"  class="dropdown-members">
-            <a href="events.php" class="menu-item"> <h3>Upcoming Events</h3> </a>
-            <a href="birthday.php" class="menu-item"> <h3>Birthdays</h3> </a>   
+            <a href="events" class="menu-item"> <h3>Upcoming Events</h3> </a>
+            <a href="birthday" class="menu-item"> <h3>Birthdays</h3> </a>   
          </div>
 
           <a href="javascript:void(0)" onclick="campreg()" class="menu-item">
@@ -91,18 +95,18 @@
           </a>
 
           <div id="campreg" class="dropdown-exams">
-           <a href="send-email.php" class="menu-item"> <h3>Add Tithe</h3> </a>
-           <a href="send-textmsg.php" class="menu-item"> <h3>Add Offering</h3> </a>
-           <a href="send-textmsg.php" class="menu-item"> <h3> Add Donations</h3> </a>
+           <a href="send-email" class="menu-item"> <h3>Add Tithe</h3> </a>
+           <a href="send-textmsg" class="menu-item"> <h3>Add Offering</h3> </a>
+           <a href="send-textmsg" class="menu-item"> <h3> Add Donations</h3> </a>
          </div>
                      
 <!---------------------------------------------------------- EDIT ADMIN ACCOUNT ------------------------------------------------------->     
-        <a href="adminedit.php" class="menu-item">
+        <a href="adminedit" class="menu-item">
        <!--    <span><i class="material-icons">settings</i></span> -->
             <h3>Edit Admin Account</h3>
         </a>
 
-        <a href="dashboard.php?logout=true" class="menu-item">
+        <a href="dashboard?logout=true" class="menu-item">
             <h3>Log out</h3>
         </a>
 

@@ -245,7 +245,9 @@ CREATE TABLE IF NOT EXISTS `unit_ministry` (
 
  
      ALTER TABLE `announcement`
-     ADD `active_status` varchar(255) NOT NULL;
+       CHANGE `id` `id` int(11) NOT NULL  AUTO_INCREMENT;
+    --  ADD `img` blob;
+    -- ADD `active_status` varchar(255) NOT NULL;
     -- CHANGE `announcement_id` `id` int(10),
     -- CHANGE `times` `date` timestamp,
     -- ADD `typefor` varchar(255) NOT NULL;

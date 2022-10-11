@@ -24,13 +24,12 @@
                       if(xhr.status===200){
                              
                              let data=xhr.responseText;                            
-                             if(data == "success"){
+                             if(data ==="success"){
                                    error.style.display="none";
                                    btn.textContent="created succesfully";
                                    textValue.value="";                                       
                              }
                               else{  
-                               // error.innerHTML="you can't create an empty product";
                                 error.style.display="block";
                                 error.textContent=data;
                                 btn.innerHTML="Try again";                                                   

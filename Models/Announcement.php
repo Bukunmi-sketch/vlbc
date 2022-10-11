@@ -1,6 +1,6 @@
 <?php
 
-
+error_reporting(1);
 require '../Includes/db.inc.php';
  
 
@@ -64,7 +64,7 @@ require '../Includes/db.inc.php';
 
            }
 
-           public function getActiveAnnouncement($id){
+           public function getActiveAnnouncement(){
             try{
                 $status="true";
                 $sql="SELECT * FROM announcement WHERE active_status=:status";

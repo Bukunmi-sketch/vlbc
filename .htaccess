@@ -1,11 +1,9 @@
-RewriteEngine On
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
 
-
-RewriteCond %{REQUEST_URI} !^/Views/
-RewriteRule ^pagination?$ pagination.php
-RewriteRule ^pagination/([0-9]+) pagination.php?page=$1
-
-RewriteRule ^home allprojects.php [NC,L]
-RewriteRule ^pagination/([0-9a-zA-Z]+) pagination.php?page=$1 [NC,L]
-
-
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html

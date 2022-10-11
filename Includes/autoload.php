@@ -5,7 +5,7 @@ spl_autoload_register(function($className) {
             if (file_exists($file)) {
                  // echo "$file included\n";
                   include $file;
-            } else {
+            } else{
             throw new Exception("Unable to load $className.");
            }
         });
@@ -16,9 +16,8 @@ try {
     $userInstance= new User($conn);
     $loginInstance= new Login($conn);
     $registerInstance= new Register($conn);
-    $memberInstance = new User\Member($conn);
+   // $memberInstance = new User\Member($conn);
     $announceInstance = new Announcement($conn);
-    $categoryInstance = new Category($conn);
     $reportInstance = new Report($conn);
     $payInstance = new Payment($conn);
     $notifyInstance = new Notification($conn);

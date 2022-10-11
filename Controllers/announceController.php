@@ -1,6 +1,7 @@
 <?php
 
 include '../Includes/autoload.php';
+//include '../Includes/inc.php';
 
 $imgInstance= new Uploadimg($conn);
 $announceInstance = new Announcement($conn);
@@ -10,7 +11,6 @@ $typefor="";
 $title="";
 $content="";
 $status="";
-
 $date="";
 $picture="";
 
@@ -18,16 +18,16 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 
     $typefor=$authInstance->validate($_POST['typefor']);
-    $title=$authInstance->validate($_POST['title']);
+    $title=$authInstance->validate(strtoupper($_POST['title']) );
     $content=$authInstance->validate($_POST['content']);
     $date=date("y-m-d h:ia");
     $admin_id=$_POST['creator_id'];
     $status="true";
 
-    $picture=$_FILES['product_image']["name"];
-    $dpsize=$_FILES['product_image']['size'];
-    $dptemp=$_FILES['product_image']['tmp_name']; 
-    $dir="../images/member-img/";
+    $picture=$_FILES['file_image']["name"];
+    $dpsize=$_FILES['file_image']['size'];
+    $dptemp=$_FILES['file_image']['tmp_name']; 
+    $dir="../images/announce-img/";
     $dirfile=$dir.basename($picture);
     
 
@@ -53,12 +53,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                  echo 'file is not an image';
               }
      
-     }elseif( !empty($typefor) && !empty($title) && !empty($content) && !empty($picture)  && empty($picture) ){
-         $picture="";
-      
-                      
-            if(  $announceInstance->createAnnouncement($title, $content, $typefor, $date, $picture, $status) ){
+     }elseif( !empty($typefor) && !empty($title) && !empty($content)  && empty($picture) ){
+         $picture="null.png";
                             
+            if($announceInstance->createAnnouncement($title, $content, $typefor, $date, $picture, $status) ){                            
                 echo "success";
             }else{
                 echo "an error occurred while adding this annoucement";
@@ -66,11 +64,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
      }else{
        echo 'fields must be totally filled';
      }
-
-
-
-
-
 
 }
 

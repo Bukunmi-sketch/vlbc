@@ -15,6 +15,10 @@ function attend(){
     document.getElementById("attendance").classList.toggle("show");
 }
 
+function announce(){
+    document.getElementById("announce").classList.toggle("show");
+}
+
 function manage(){
     document.getElementById("manage").classList.toggle("show");
 }
