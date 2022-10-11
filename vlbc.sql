@@ -244,8 +244,13 @@ CREATE TABLE IF NOT EXISTS `unit_ministry` (
 
 
  
-     ALTER TABLE `announcement`
-       CHANGE `id` `id` int(11) NOT NULL  AUTO_INCREMENT;
+     ALTER TABLE `members`
+     ADD `rollid` VARCHAR(200) NOT NULL AFTER `lastname`,
+     ADD `unit` varchar(255) NOT NULL AFTER `ministry`;
+     -- DROP `rollid`;
+    --  ADD `rollid` VARCHAR(200) NOT NULL AFTER `lastname`
+    -- ADD `unit` varchar(255) NOT NULL AFTER `ministry`;
+     --  CHANGE `id` `id` int(11) NOT NULL  AUTO_INCREMENT;
     --  ADD `img` blob;
     -- ADD `active_status` varchar(255) NOT NULL;
     -- CHANGE `announcement_id` `id` int(10),

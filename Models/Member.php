@@ -14,15 +14,16 @@ require '../Includes/db.inc.php';
         }
 
         //create new Members
-        public function createMembers($admin_id, $picture, $firstname, $lastname, $email, $mobile, $gender, $residence, $prev_church, $origin, $ministry, $birthday, $date){  
+        public function createMembers($admin_id, $picture, $firstname, $lastname, $rollid, $email, $mobile, $gender, $residence, $prev_church, $origin, $ministry, $unit, $birthday, $date){  
                try{
                 
-                   $sql="INSERT INTO members(admin_id, image, firstname, lastname, email, mobile,	gender,	residence, previous_church, origin, ministry, birthday, date	)VALUES   (:admin_id, :picture,:firstname, :lastname,  :email, :mobile, :gender, :residence, :prev_church, :origin, :ministry, :birthday, :created )";
+                   $sql="INSERT INTO members(admin_id, image, firstname, lastname, rollid, email, mobile,	gender,	residence, previous_church, origin, ministry, unit, birthday, date	)VALUES   (:admin_id, :picture,:firstname, :lastname, :rollid,  :email, :mobile, :gender, :residence, :prev_church, :origin, :ministry, :unit, :birthday, :created )";
                      $stmt= $this->db->prepare($sql);
                       $result=  $stmt->execute([
                         ":admin_id"=>$admin_id,
                         ":firstname" =>$firstname,
                         ":lastname" =>$lastname,
+                        ":rollid" =>$rollid,
                         ":email" =>$email,
                         ":mobile" =>$mobile,
                         ":gender" =>$gender,
@@ -31,6 +32,7 @@ require '../Includes/db.inc.php';
                         ":picture" => $picture,
                         ":origin" => $origin,
                         ":ministry" =>$ministry,
+                        ":unit" =>$unit,
                         ":birthday" => $birthday,
                         ":created" =>$date
                    ]);
@@ -69,6 +71,46 @@ public function IfMemberExisted($firstname, $lastname, $mobile){
        }
     }
 
+    public function checkEmail($email){
+      try{
+      
+        $sql="SELECT * FROM members WHERE email =:email";
+        $stmt= $this->db->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        // Check if row is actually returned
+        if($stmt->rowCount() > 0 ){
+          //  echo " used";
+            return false;
+         } else{   
+            //   echo 'continue to sign up';
+               return true;
+           }
+      }catch(PDOException $e){
+             echo  $e->getMessage(); 
+         }
+      }
+
+      public function checkMemberid($rollid){
+        try{
+        
+          $sql="SELECT * FROM members WHERE rollid =:rollid";
+          $stmt= $this->db->prepare($sql);
+          $stmt->bindParam(':rollid', $rollid);
+          $stmt->execute();
+          // Check if row is actually returned
+          if($stmt->rowCount() > 0 ){
+            //  echo " used";
+              return false;
+           } else{   
+              //   echo 'continue to sign up';
+                 return true;
+             }
+        }catch(PDOException $e){
+               echo  $e->getMessage(); 
+           }
+        }
+  
 
 
            public function getMembers()

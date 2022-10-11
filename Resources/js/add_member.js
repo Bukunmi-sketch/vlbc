@@ -3,8 +3,9 @@
 let imageValue= document.querySelector('#profileDisplay');
 let capfiles= document.querySelector("#capture");
 let textValue=document.querySelector("#passa");
-let priceid=document.querySelector("#priceid");
+
 let descid=document.querySelector("#descid");
+
 
 
         const forme=document.querySelector("form.create");
@@ -19,6 +20,19 @@ let descid=document.querySelector("#descid");
          
          
          btn.onclick=()=>{
+
+           /* let date=new Date();
+            let year=date.getFullYear();
+            console.log(year);
+
+            let rollid=document.querySelector("#rollid").value;
+            let roll=document.querySelector("#rollid");
+            let lastfour=rollid.slice(-4);
+            let evall=eval(lastfour=lastfour + 1);
+            console.log(evall);
+            roll.value="VLBC/"+year +"/"+evall;
+
+            */
             
             let xhr="";
             if(window.XMLHttpRequest){
@@ -37,7 +51,7 @@ let descid=document.querySelector("#descid");
                                    error.style.display="none";
                                    btn.textContent="posted successfully";
                                    textValue.value="";
-                                   priceid.value="";
+                                  
                                    descid.value="";
                                    imageValue.setAttribute('src', '');  
                                    capfiles.value='';                                       
@@ -61,3 +75,6 @@ let descid=document.querySelector("#descid");
              xhr.send(formdata);
             }
 
+            var id = "ctl03_Tabs1";
+            var lastFive = id.substr(id.length - 5); // => "Tabs1"
+            var lastChar = id.substr(id.length - 1); // => "1"

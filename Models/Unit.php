@@ -65,5 +65,143 @@ public function IfUnitExisted($Unitname){
       return $stmt;
     }
 
+    /*
+  public function fetchUnitMembers($ministry){
+    $sql="SELECT * FROM members WHERE ministry=:ministry";
+    $stmt=$this->db->prepare($sql);
+    $stmt->bindParam(':ministry',$ministry );
+    $stmt->execute();
+    $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
+    $g=1;
+    if ($stmt->rowCount() > 0){ 
+   echo '
+<div class="table-container">
+            <table id="example">
+              <thead>
+                <tr>
+                  <th>S/N</th>
+                  <th> Action </th>
+                  <th>Members Name</th>
+                  <th>Members Id</th>
+                  <th>Members contact</th>
+                  <th>Ministry</th>
+                  <th>Unit</th>
+                  <th>Email</th>
+                  <th>gender</th>
+                  <th>Residence</th>
+                  <th>Birthday</th>
+                  <th>State of Origin</th>
+                  <th>Previous Church</th>
+                  <th>Registered Date</th>
+                  <th>Time registered</th>
+                </tr>
+              </thead>
+              <tbody>
+';
+       foreach($data as $members){ 
+   echo '   <div>
+                    <tr class="trr" id="eachorder'.  "{$members['id']}".'">
+                    <td> '. $g++.'   </td>
+                      <form action="" class="order-modify">
+                        <td>
+                          <!--<button class="editbtn">Edit</button>--><button data-identity="'.  "{$members['id']}".'" class="deletebtn">Delete</button>
+                        </td>
+                      </form>                     
+                      <td> '.  "{$members['firstname']} {$members['lastname']}".' </td>
+                      <td> '.  "{$members['rollid']}".' </td>
+                      <td> '.  "{$members['mobile']}".' </td>
+                      <td> '.  "{$members['ministry']}".' </td>
+                      <td> '.  "{$members['unit']}".' </td>
+                      <td> '.  "{$members['email']}".' </td>
+                      <td> '.  "{$members['gender']}".' </td>
+                      <td> '.  "{$members['residence']}".' </td>
+                      <td> '.  "{$members['birthday']}".' </td>
+                      <td> '.  "{$members['origin']}".' </td>
+                      <td> '.  "{$members['previous_church']}".' </td>
+                      <td> '. date("D,F j Y",  strtotime($members['date'])).' </td>
+                      <td> '. date("H:i a",  strtotime($members['date'])).' </td>
+                    </tr>
+                  </div>
+                  ';
+          
+       }
 
-}
+
+   }else{ 
+     echo '<p>There are no members here</p> ';
+  
+     }
+   // ob_get_clean();
+        }
+*/
+
+        public function fetchUnitMembers($ministry){
+          $sql="SELECT * FROM members WHERE ministry=:ministry";
+          $stmt=$this->db->prepare($sql);
+          $stmt->bindParam(':ministry',$ministry );
+          $stmt->execute();
+          $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
+          $g=1;
+          if ($stmt->rowCount() > 0){
+            ob_start();
+            ?>
+        
+      <div class="table-container">
+                  <table id="example">
+                    <thead>
+                      <tr>
+                        <th>S/N</th>
+                        <th> Action </th>
+                        <th>Members Name</th>
+                        <th>Members Id</th>
+                        <th>Members contact</th>
+                        <th>Ministry</th>
+                        <th>Unit</th>
+                        <th>Email</th>
+                        <th>gender</th>
+                        <th>Residence</th>
+                        <th>Birthday</th>
+                        <th>State of Origin</th>
+                        <th>Previous Church</th>
+                        <th>Registered Date</th>
+                        <th>Time registered</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+      
+            <?php foreach($data as $members){  ?>
+              <div>
+                          <tr class="trr" id="eachorder<?php echo  "{$members['id']}"; ?>">
+                          <td> <?php echo $g++; ?>   </td>
+                            <form action="" class="order-modify">
+                              <td>
+                                <!--<button class="editbtn">Edit</button>--><button data-identity="<?php echo  "{$members['id']}"; ?>" class="deletebtn">Delete</button>
+                              </td>
+                            </form>                     
+                            <td> <?php echo  "{$members['firstname']} {$members['lastname']}"; ?> </td>
+                            <td> <?php echo  "{$members['rollid']}"; ?> </td>
+                            <td> <?php echo  "{$members['mobile']}"; ?> </td>
+                            <td> <?php echo  "{$members['ministry']}"; ?> </td>
+                            <td> <?php echo  "{$members['unit']}"; ?> </td>
+                            <td> <?php echo  "{$members['email']}"; ?> </td>
+                            <td> <?php echo  "{$members['gender']}"; ?> </td>
+                            <td> <?php echo  "{$members['residence']}"; ?> </td>
+                            <td> <?php echo  "{$members['birthday']}"; ?> </td>
+                            <td> <?php echo  "{$members['origin']}"; ?> </td>
+                            <td> <?php echo  "{$members['previous_church']}"; ?> </td>
+                            <td> <?php echo date("D,F j Y",  strtotime($members['date'])); ?> </td>
+                            <td> <?php echo date("H:i a",  strtotime($members['date'])); ?> </td>
+                          </tr>
+                        </div>
+                
+            <?php } ?>
+      
+      
+        <?php }else{ ?>
+          <p>There are no members here</p>
+        
+      <?php     }
+     //   return  ob_get_clean();
+              }  
+   }
+?>

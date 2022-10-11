@@ -55,7 +55,7 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
       <div class="middle">
         <?php if ($statement->rowCount() > 0) : ?>
 
-          <h5>No members have been registereed </h5>
+          <h5> </h5>
           <form action="orders.php"></form>
        
           <div class="table-container">
@@ -65,8 +65,10 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
                   <th>S/N</th>
                   <th> Action </th>
                   <th>Members Name</th>
+                  <th>Members Id</th>
                   <th>Members contact</th>
                   <th>Ministry</th>
+                  <th>Unit</th>
                   <th>Email</th>
                   <th>gender</th>
                   <th>Residence</th>
@@ -88,8 +90,10 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
                         </td>
                       </form>                     
                       <td> <?php echo  "{$members['firstname']} {$members['lastname']}"; ?> </td>
+                      <td> <?php echo  "{$members['rollid']}"; ?> </td>
                       <td> <?php echo  "{$members['mobile']}"; ?> </td>
                       <td> <?php echo  "{$members['ministry']}"; ?> </td>
+                      <td> <?php echo  "{$members['unit']}"; ?> </td>
                       <td> <?php echo  "{$members['email']}"; ?> </td>
                       <td> <?php echo  "{$members['gender']}"; ?> </td>
                       <td> <?php echo  "{$members['residence']}"; ?> </td>
@@ -107,7 +111,7 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
         
 
         <?php else : ?>
-          <h4>there are no orders available</h4>
+          <h4>No members have been registereed</h4>
         <?php endif ?>
       </div>
 

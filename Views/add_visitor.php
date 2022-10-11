@@ -123,7 +123,6 @@ $registered_date = $userInfo['date'];
 
                                 </div>
 
-
                                 <div class="inputbox-details">
                                     <label for="birthday">Birthday</label>
                                     <input type="date" name="birthday" placeholder="" value=" " autofocus>

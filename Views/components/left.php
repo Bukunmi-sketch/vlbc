@@ -38,18 +38,14 @@
            <a href="all_members" class="menu-item"> <h3>Members details </h3> </a>
          </div>
 
-         <a href="units"  class="menu-item" onclick="manage()">
+         <a href="javascript:void(0)"  class="menu-item" onclick="manage()">
             <h3>Ministry/Units</h3>
         </a>
 
         <div id="manage" class="dropdown-content">
-           <a href="add_member" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>WMU</h3> </a>
-           <a href="allmembers" class="menu-item"> <h3>Youth </h3> </a>
-           <a href="allmembers" class="menu-item"> <h3> MMU </h3> </a>
-           <a href="allmembers" class="menu-item"> <h3> Choir </h3> </a>
-           <a href="allmembers" class="menu-item"> <h3> BSF </h3> </a>
-           <a href="allmembers" class="menu-item"> <h3> Youth </h3> </a>
-           <a href="allmembers" class="menu-item"> <h3> Usher </h3> </a>
+           <a href="units" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>Create Units </h3> </a>
+           <a href="view_ministry" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>View Ministries</h3> </a>
+           <a href="view_units" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>View Units</h3> </a>
          </div>
 
         <a href="javascript:void(0)"  class="menu-item" onclick="announce()">
