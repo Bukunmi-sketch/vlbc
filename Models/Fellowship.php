@@ -4,7 +4,7 @@
 
 require '../Includes/db.inc.php';
 
-   class Unit{
+   class Fellowship{
         private $db;
        
         public function __construct($conn)
@@ -13,13 +13,13 @@ require '../Includes/db.inc.php';
         }
 
         //create new Unit
-        public function createUnit($name, $creator, $created_at){  
+        public function createFellowship($name, $creator, $created_at){  
                try{
                 
-                   $sql="INSERT INTO unit_ministry(name, added_by, created_at) VALUES (:Unit_name, :creator, :created)";
+                   $sql="INSERT INTO fellowships(name, added_by, added_date) VALUES (:fellowshipname, :creator, :created)";
                      $stmt= $this->db->prepare($sql);
                       $result=  $stmt->execute([
-                        ":Unit_name"=>$name,
+                        ":fellowshipname"=>$name,
                         ":creator" =>$creator,
                         ":created" =>$created_at
                    ]);
@@ -27,7 +27,7 @@ require '../Includes/db.inc.php';
                    if($result){
                      return true;
                   }else{
-                    //   echo "error while creating Unit";
+                    //   echo "error while creating";
                     return false;
                    }
                } catch(PDOException $e){
@@ -36,12 +36,12 @@ require '../Includes/db.inc.php';
     }   //create()
    
                                   //if produxtname already exist  //auth
-public function IfUnitExisted($Unitname){
+public function IfFellowshipExisted($fellowship){
     try{
     
-      $sql="SELECT * FROM unit_ministry WHERE name =:Unitname";
+      $sql="SELECT * FROM fellowship WHERE name =:fellowship";
       $stmt= $this->db->prepare($sql);
-      $stmt->bindParam(':Unitname', $Unitname);
+      $stmt->bindParam(':fellowship', $fellowship);
       $stmt->execute();
       // Check if row is actually returned
       if($stmt->rowCount() > 0 ){
@@ -57,88 +57,19 @@ public function IfUnitExisted($Unitname){
     }
 
   
-    public function getunitMinistry()
+    public function getFellowship()
     {             
-      $sql="SELECT * FROM unit_Ministry";
+      $sql="SELECT * FROM fellowship";
       $stmt=$this->db->prepare($sql);
       $stmt->execute();
       return $stmt;
     }
 
-    /*
-  public function fetchUnitMembers($ministry){
-    $sql="SELECT * FROM members WHERE ministry=:ministry";
-    $stmt=$this->db->prepare($sql);
-    $stmt->bindParam(':ministry',$ministry );
-    $stmt->execute();
-    $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
-    $g=1;
-    if ($stmt->rowCount() > 0){ 
-   echo '
-<div class="table-container">
-            <table id="example">
-              <thead>
-                <tr>
-                  <th>S/N</th>
-                  <th> Action </th>
-                  <th>Members Name</th>
-                  <th>Members Id</th>
-                  <th>Members contact</th>
-                  <th>Ministry</th>
-                  <th>Unit</th>
-                  <th>Email</th>
-                  <th>gender</th>
-                  <th>Residence</th>
-                  <th>Birthday</th>
-                  <th>State of Origin</th>
-                  <th>Previous Church</th>
-                  <th>Registered Date</th>
-                  <th>Time registered</th>
-                </tr>
-              </thead>
-              <tbody>
-';
-       foreach($data as $members){ 
-   echo '   <div>
-                    <tr class="trr" id="eachorder'.  "{$members['id']}".'">
-                    <td> '. $g++.'   </td>
-                      <form action="" class="order-modify">
-                        <td>
-                          <!--<button class="editbtn">Edit</button>--><button data-identity="'.  "{$members['id']}".'" class="deletebtn">Delete</button>
-                        </td>
-                      </form>                     
-                      <td> '.  "{$members['firstname']} {$members['lastname']}".' </td>
-                      <td> '.  "{$members['rollid']}".' </td>
-                      <td> '.  "{$members['mobile']}".' </td>
-                      <td> '.  "{$members['ministry']}".' </td>
-                      <td> '.  "{$members['unit']}".' </td>
-                      <td> '.  "{$members['email']}".' </td>
-                      <td> '.  "{$members['gender']}".' </td>
-                      <td> '.  "{$members['residence']}".' </td>
-                      <td> '.  "{$members['birthday']}".' </td>
-                      <td> '.  "{$members['origin']}".' </td>
-                      <td> '.  "{$members['previous_church']}".' </td>
-                      <td> '. date("D,F j Y",  strtotime($members['date'])).' </td>
-                      <td> '. date("H:i a",  strtotime($members['date'])).' </td>
-                    </tr>
-                  </div>
-                  ';
-          
-       }
-
-
-   }else{ 
-     echo '<p>There are no members here</p> ';
-  
-     }
-   // ob_get_clean();
-        }
-*/
-
-        public function fetchUnitMembers($ministry){
-          $sql="SELECT * FROM members WHERE ministry=:ministry";
+ 
+        public function fetchFellowshipMembers($fellowship){
+          $sql="SELECT * FROM members WHERE fellowship=:fellowship";
           $stmt=$this->db->prepare($sql);
-          $stmt->bindParam(':ministry',$ministry );
+          $stmt->bindParam(':fellowship',$fellowship );
           $stmt->execute();
           $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
           $g=1;
@@ -159,6 +90,8 @@ public function IfUnitExisted($Unitname){
                         <th>Unit</th>
                         <th>Email</th>
                         <th>gender</th>
+                        <th>Fellowships</th>
+                        <th>Marital Status</th>
                         <th>Residence</th>
                         <th>Birthday</th>
                         <th>State of Origin</th>
@@ -185,6 +118,8 @@ public function IfUnitExisted($Unitname){
                             <td> <?php echo  "{$members['department']}"; ?> </td>
                             <td> <?php echo  "{$members['email']}"; ?> </td>
                             <td> <?php echo  "{$members['gender']}"; ?> </td>
+                            <td> <?php echo  "{$members['fellowships']}"; ?> </td>
+                            <td> <?php echo  "{$members['marital_status']}"; ?> </td>
                             <td> <?php echo  "{$members['residence']}"; ?> </td>
                             <td> <?php echo  "{$members['birthday']}"; ?> </td>
                             <td> <?php echo  "{$members['origin']}"; ?> </td>

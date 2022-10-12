@@ -14,9 +14,6 @@
 
     $name=$firstname . $lastname;
   
-   
-   // include './components/activity.php';
-//ob_end_clean(); 
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,7 +36,7 @@
         <div class="middle">
     <div class="min-sub-container" >
         <div class="spanheader">
-            <span><h4> Create House Fellowhip </h4></span>
+            <span><h4> Create House Fellowship </h4></span>
         </div>
 
         <form action="#" method="POST">
