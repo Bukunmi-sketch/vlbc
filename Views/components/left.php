@@ -61,8 +61,8 @@
         </a>
 
         <div id="exams" class="dropdown-exams">
-           <a href="send-email" class="menu-item"> <h3>Create House Fellowship</h3> </a>
-           <a href="send-textmsg" class="menu-item"> <h3>View Fellowhip Members</h3> </a>
+           <a href="add_fellowship" class="menu-item"> <h3>Create House Fellowship</h3> </a>
+           <a href="view_fellowship" class="menu-item"> <h3>View Fellowhip Members</h3> </a>
            <a href="send-textmsg" class="menu-item"> <h3>Children Details</h3> </a>
          </div>
 

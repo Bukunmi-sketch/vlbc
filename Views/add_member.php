@@ -180,7 +180,7 @@ $registered_date = $userInfo['date'];
                              </div>
 
                              <div class="inputbox-details">
-                                    <label for="marital">House Fellowip </label>
+                                    <label for="marital">House Fellowship</label>
                                     <select name="gender">
                                         <option value="Male">Married</option>
                                         <option value="Female">Single</option>

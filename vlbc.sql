@@ -68,6 +68,18 @@ CREATE TABLE IF NOT EXISTS `announcement` (
   PRIMARY KEY (`announcement_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
+--
+-- Table structure for table `fellowships`
+--
+
+CREATE TABLE IF NOT EXISTS `fellowships` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `added_by` text NOT NULL,
+  `added_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1  ;
+
 
 -- --------------------------------------------------------
 
@@ -245,8 +257,11 @@ CREATE TABLE IF NOT EXISTS `unit_ministry` (
 
  
      ALTER TABLE `members`
-     ADD `rollid` VARCHAR(200) NOT NULL AFTER `lastname`,
-     ADD `unit` varchar(255) NOT NULL AFTER `ministry`;
+     ADD `birthmonth` VARCHAR(200) NOT NULL AFTER `birthday`,
+     CHANGE `unit` `department` varchar(255),
+     ADD `marital_status` varchar(255) NOT NULL AFTER `gender`;
+
+     DROP TABLE `vlbc`.`visitor`;
      -- DROP `rollid`;
     --  ADD `rollid` VARCHAR(200) NOT NULL AFTER `lastname`
     -- ADD `unit` varchar(255) NOT NULL AFTER `ministry`;

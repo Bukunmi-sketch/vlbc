@@ -68,7 +68,7 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
                   <th>Members Id</th>
                   <th>Members contact</th>
                   <th>Ministry</th>
-                  <th>Unit</th>
+                  <th>Department</th>
                   <th>Email</th>
                   <th>gender</th>
                   <th>Residence</th>
@@ -93,7 +93,7 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
                       <td> <?php echo  "{$members['rollid']}"; ?> </td>
                       <td> <?php echo  "{$members['mobile']}"; ?> </td>
                       <td> <?php echo  "{$members['ministry']}"; ?> </td>
-                      <td> <?php echo  "{$members['unit']}"; ?> </td>
+                      <td> <?php echo  "{$members['department']}"; ?> </td>
                       <td> <?php echo  "{$members['email']}"; ?> </td>
                       <td> <?php echo  "{$members['gender']}"; ?> </td>
                       <td> <?php echo  "{$members['residence']}"; ?> </td>
