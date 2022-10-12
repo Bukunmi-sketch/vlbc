@@ -40,19 +40,19 @@ $registered_date = $userInfo['date'];
             $stmt->execute();
             $returned_row = $stmt->FETCH(PDO::FETCH_ASSOC);
 
-            if($stmt->rowCount() <= 0 ){
+            if ($stmt->rowCount() <= 0) {
                 $year = date("Y");
                 $generatedId = "VLBC/$year/1000";
-            }else{
-            //get the last four no of the rollid
-            $lastFour = substr($returned_row['rollid'], -4);
-            //increment it by one
-            $newRegNo = intval($lastFour) + 1;
-          //  var_dump($newRegNo);
-          //  die();
-            
-            $year = date("Y");
-            $generatedId = "VLBC/$year/$newRegNo";
+            } else {
+                //get the last four no of the rollid
+                $lastFour = substr($returned_row['rollid'], -4);
+                //increment it by one
+                $newRegNo = intval($lastFour) + 1;
+                //  var_dump($newRegNo);
+                //  die();
+
+                $year = date("Y");
+                $generatedId = "VLBC/$year/$newRegNo";
             }
             ?>
 
@@ -64,7 +64,7 @@ $registered_date = $userInfo['date'];
                 <div class="max-sub-container">
 
                     <form class="create" action="#" enctype="multipart/form-data">
-                  
+
                         <div class="success"></div>
 
                         <div class="first-flex-inbox">
@@ -125,10 +125,17 @@ $registered_date = $userInfo['date'];
                                     </select>
                                 </div>
 
-                              
+
                                 <div class="inputbox-details">
                                     <label for="origin">State of Origin</label>
-                                    <input type="text" name="state_origin" placeholder="State of Origin" value=" " autofocus>
+                                    <?php
+                                    $states = ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT - Abuja", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"]
+                                    ?>
+                                    <select name="state_origin">
+                                        <?php foreach ($states as $state) : ?>
+                                            <option value="<?php echo $state; ?> "><?php echo $state; ?> </option>
+                                        <?php endforeach ?>
+                                    </select>
                                 </div>
 
                                 <div class="inputbox-details">
@@ -170,16 +177,16 @@ $registered_date = $userInfo['date'];
                                     </select>
                                 </div>
 
-                                                           
+
                             </div>
-                    
-                        <div class="flex-inbox">
-                            <div class="inputbox-details">
+
+                            <div class="flex-inbox">
+                                <div class="inputbox-details">
                                     <label for="residence"> Residence Address</label>
                                     <input type="text" name="residence" placeholder="current residence address" value=" " autofocus>
-                             </div>
+                                </div>
 
-                             <div class="inputbox-details">
+                                <div class="inputbox-details">
                                     <label for="marital">House Fellowship</label>
                                     <select name="gender">
                                         <option value="Male">Married</option>
@@ -188,12 +195,12 @@ $registered_date = $userInfo['date'];
                                         <option value="Female">Widow</option>
                                     </select>
                                 </div>
-                        </div>       
+                            </div>
 
 
                             <div class="flex-triple-inbox">
 
-                            <div class="inputbox-details">
+                                <div class="inputbox-details">
                                     <label for="marital">Marital Status</label>
                                     <select name="gender">
                                         <option value="Male">Married</option>
@@ -202,23 +209,31 @@ $registered_date = $userInfo['date'];
                                         <option value="Female">Widow</option>
                                     </select>
                                 </div>
-                                
+
                                 <div class="inputbox-details">
                                     <label for="ministry">Birthday date</label>
                                     <select name="ministry">
-                                        
-                                            <?php for($i=1; $i <=31; $i++) : ?>
-                                                <option value="<?php echo $i; ?> "><?php echo $i; ?> </option>
-                                            <?php endfor ?>
-                                       
+
+                                        <?php for ($i = 1; $i <= 31; $i++) : ?>
+                                            <option value="<?php echo $i; ?> "><?php echo $i; ?> </option>
+                                        <?php endfor ?>
+
                                     </select>
 
-                                </div>   
+                                </div>
 
 
                                 <div class="inputbox-details">
                                     <label for="month">Month</label>
-                                    <input type="month" name="birthday" placeholder="" value=" " autofocus>
+
+                                    <?php
+                                     $months= ["January","February","March","April","May","June","July", "August","September","October","November","December"];
+                                    ?>
+                                    <select name="birthday">
+                                        <?php foreach ($months as $month) : ?>
+                                            <option value="<?php echo $month; ?> "><?php echo $month; ?> </option>
+                                        <?php endforeach ?>
+                                    </select>
                                 </div>
                             </div>
 

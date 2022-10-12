@@ -70,7 +70,7 @@ main .container .left .image-removebox{
 
 .left .sidebar i{
     font-size: 1.4rem;
-    color: var(--color-black);
+    color: var(--color-white);
     margin-left: 2rem;
     position:relative;
 }
@@ -105,7 +105,7 @@ main .container .left .image-removebox{
     font-size: 0.9rem;
     color: var(--page-header-headingColor);
     font-weight: light;
-    font-family:'Mukta', sans-serif;
+    font-family:'poppins', sans-serif;
 
 }
 
