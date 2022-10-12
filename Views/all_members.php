@@ -33,7 +33,7 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
   <link rel="stylesheet" type="text/css" href="../Resources/css/app.css">
   <link rel="stylesheet" type="text/css" href="../Resources/css/dropdown.css">
   <link rel="stylesheet" type="text/css" href="../Resources/css/table.css">
-  <link rel="stylesheet" type="text/css" href="../assets/DataTables/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="../vendors/DataTables/datatables.min.css" />
 
 </head>
 
@@ -124,22 +124,22 @@ if (isset($_GET['read']) && ($_GET['read'] == 'true')) {
 
   </main>
 
-  <script src="../assets/DataTables/datatables.min.js"></script>
-  <script src="../assets/pace/pace.min.js"></script>
-  <script src="../assets/lobipanel/lobipanel.min.js"></script>
-  <script src="../assets/iscroll/iscroll.js"></script>
-  <script src="../assets/prism/prism.js"></script>
+  <script src="../vendors/DataTables/datatables.min.js"></script>
+  <script src="../vendors/pace/pace.min.js"></script>
+  <script src="../vendors/lobipanel/lobipanel.min.js"></script>
+  <script src="../vendors/iscroll/iscroll.js"></script>
+  <script src="../vendors/prism/prism.js"></script>
   <script src="../Resources/js/sidebar.js"></script>
   <script src="../Resources/js/del-order.js"></script>
 
   <script>
     $(function($) {
-     // $('#example').DataTable();
+      $('#example').DataTable();
 
       $('#example').DataTable({
      //   "scrollY": "300px",
       //  "scrollCollapse": true,
-        "paging": false
+        "paging": true
       });
 
       $('#example3').DataTable();

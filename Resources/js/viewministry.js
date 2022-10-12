@@ -1,8 +1,7 @@
 
         const forme=document.querySelector("form");
         const btn=document.querySelector("button.submit");
-        const error=document.querySelector(".error");
-        let textValue=document.querySelector("input[type=text]");    
+        const error=document.querySelector(".error"); 
         let result=document.querySelector(".result-box");    
          
         forme.onsubmit=(e)=>{

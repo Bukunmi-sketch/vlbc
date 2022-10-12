@@ -60,16 +60,17 @@ $registered_date = $userInfo['date'];
 
                             <div class="flex-inbox">
                                 <div class="inputbox-details">
-                                    <label for="email">Email</label>
-                                    <input type="email"  name="email" placeholder="Email" value=" " autofocus>
-                                </div>
-
-
-                                <div class="inputbox-details">
                                     <label for="mobile">Mobile Number</label>
                                     <input type="number"  name="mobile" placeholder="Phone Number" value=" " autofocus>
                                 </div>
+
+                                <div class="inputbox-details">
+                                    <label for="residence"> Residence Address</label>
+                                    <input type="text"  name="residence" placeholder="current residence address" value=" " autofocus>
+                                </div>
                             </div>
+
+                           
 
                         </div>
 
@@ -86,48 +87,29 @@ $registered_date = $userInfo['date'];
                                 </div>
 
                                 <div class="inputbox-details">
-                                    <label for="residence"> Residence Address</label>
-                                    <input type="text"  name="residence" placeholder="current residence address" value=" " autofocus>
-                                </div>
-                            </div>
-
-                            <div class="flex-inbox">
-                                <div class="inputbox-details">
                                     <label for="prevchurch">Previous Church</label>
                                     <input type="text"  name="prev_church" placeholder="Previous church attended" value=" " autofocus>
                                 </div>
-
-
-                                <div class="inputbox-details">
-                                    <label for="origin">State of Origin</label>
-                                    <input type="text"  name="state_origin" placeholder="State of Origin" value=" " autofocus>
-                                </div>
+                             
                             </div>
 
                             <div class="flex-inbox">
-                                <div class="inputbox-details">
-                                    <label for="ministry">Ministry/Unit</label>
-                                    <select name="ministry">
-                                        <?php
-                                        $stmt = $unitInstance->getunitMinistry();
-                                        $unitData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                        if ($stmt->rowCount() > 0) :
-                                        ?>
-                                            <?php foreach ($unitData as $unit) : ?>
-                                                <option value="<?php echo  "{$unit['name']}"; ?> "><?php echo  "{$unit['name']}"; ?> </option>
-                                            <?php endforeach ?>
-                                        <?php else : ?>
-                                            <option value="">No unit, create Now!</option>
-                                        <?php endif ?>
-                                    </select>
 
+                               <div class="inputbox-details">
+                                    <label for="gender">Become member (Join us)</label>
+                                    <select name="gender">
+                                        <option value="Male">Yes</option>
+                                        <option value="Female">No</option>
+                                    </select>
                                 </div>
 
+
                                 <div class="inputbox-details">
-                                    <label for="birthday">Birthday</label>
-                                    <input type="date" name="birthday" placeholder="" value=" " autofocus>
+                                    <label for="origin">Worship Experience</label>
+                                    <input type="text"  name="state_origin" placeholder="collect visitors worship experience" value=" " autofocus>
                                 </div>
                             </div>
+
 
 
 

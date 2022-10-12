@@ -11,7 +11,7 @@ $userid=$_POST['receiver'];
        // if($unitInstance->fetchUnitMembers($ministry)){
             $unitInstance->fetchUnitMembers($ministry);
        // }else{ 
-        //    echo 'an error occured while sending the message';
+        //    echo 'an error occured while fetching';
        // }
      }else{
        echo "kindly select an item";

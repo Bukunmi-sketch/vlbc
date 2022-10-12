@@ -115,7 +115,8 @@ $registered_date = $userInfo['date'];
 
                         <div class="second-flex-inbox">
 
-                            <div class="flex-inbox">
+                            <div class="flex-triple-inbox">
+
                                 <div class="inputbox-details">
                                     <label for="gender">Gender</label>
                                     <select name="gender">
@@ -124,26 +125,12 @@ $registered_date = $userInfo['date'];
                                     </select>
                                 </div>
 
-                                <div class="inputbox-details">
-                                    <label for="residence"> Residence Address</label>
-                                    <input type="text" name="residence" placeholder="current residence address" value=" " autofocus>
-                                </div>
-                            </div>
-
-                            <div class="flex-inbox">
-                                <div class="inputbox-details">
-                                    <label for="prevchurch">Previous Church</label>
-                                    <input type="text" name="prev_church" placeholder="Previous church attended" value=" " autofocus>
-                                </div>
-
-
+                              
                                 <div class="inputbox-details">
                                     <label for="origin">State of Origin</label>
                                     <input type="text" name="state_origin" placeholder="State of Origin" value=" " autofocus>
                                 </div>
-                            </div>
 
-                            <div class="flex-triple-inbox">
                                 <div class="inputbox-details">
                                     <label for="ministry">Ministry/Unit</label>
                                     <select name="ministry">
@@ -159,9 +146,16 @@ $registered_date = $userInfo['date'];
                                             <option value="">No unit, create Now!</option>
                                         <?php endif ?>
                                     </select>
-
                                 </div>
 
+
+                            </div>
+
+                            <div class="flex-inbox">
+                                <div class="inputbox-details">
+                                    <label for="prevchurch">Previous Church</label>
+                                    <input type="text" name="prev_church" placeholder="Previous church attended" value=" " autofocus>
+                                </div>
 
                                 <div class="inputbox-details">
                                     <label for="unit">Unit</label>
@@ -174,13 +168,57 @@ $registered_date = $userInfo['date'];
                                         <option value="WMU & Youth">WMU & Youth</option>
                                         <option value="MMU & Youth">MMU & Youth</option>
                                     </select>
-
                                 </div>
+
+                                                           
+                            </div>
+                    
+                        <div class="flex-inbox">
+                            <div class="inputbox-details">
+                                    <label for="residence"> Residence Address</label>
+                                    <input type="text" name="residence" placeholder="current residence address" value=" " autofocus>
+                             </div>
+
+                             <div class="inputbox-details">
+                                    <label for="marital">House Fellowip </label>
+                                    <select name="gender">
+                                        <option value="Male">Married</option>
+                                        <option value="Female">Single</option>
+                                        <option value="Female">Divorced</option>
+                                        <option value="Female">Widow</option>
+                                    </select>
+                                </div>
+                        </div>       
+
+
+                            <div class="flex-triple-inbox">
+
+                            <div class="inputbox-details">
+                                    <label for="marital">Marital Status</label>
+                                    <select name="gender">
+                                        <option value="Male">Married</option>
+                                        <option value="Female">Single</option>
+                                        <option value="Female">Divorced</option>
+                                        <option value="Female">Widow</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="inputbox-details">
+                                    <label for="ministry">Birthday date</label>
+                                    <select name="ministry">
+                                        
+                                            <?php for($i=1; $i <=31; $i++) : ?>
+                                                <option value="<?php echo $i; ?> "><?php echo $i; ?> </option>
+                                            <?php endfor ?>
+                                       
+                                    </select>
+
+                                </div>   
 
 
                                 <div class="inputbox-details">
-                                    <label for="birthday">Birthday</label>
-                                    <input type="date" name="birthday" placeholder="" value=" " autofocus>
+                                    <label for="month">Month</label>
+                                    <input type="month" name="birthday" placeholder="" value=" " autofocus>
                                 </div>
                             </div>
 

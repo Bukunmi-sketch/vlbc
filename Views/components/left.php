@@ -39,13 +39,13 @@
          </div>
 
          <a href="javascript:void(0)"  class="menu-item" onclick="manage()">
-            <h3>Ministry/Units</h3>
+            <h3>Ministry/Departments</h3>
         </a>
 
         <div id="manage" class="dropdown-content">
            <a href="units" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>Create Units </h3> </a>
            <a href="view_ministry" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>View Ministries</h3> </a>
-           <a href="view_units" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>View Units</h3> </a>
+           <a href="view_units" class="menu-item"> <i class="fa fa-users" aria-hidden="true"></i> <h3>View Departments</h3> </a>
          </div>
 
         <a href="javascript:void(0)"  class="menu-item" onclick="announce()">
@@ -57,15 +57,19 @@
          </div>
 
         <a href="javascript:void(0)" class="menu-item" onclick="exams()">
-            <h3>Teens & Children</h3>
+            <h3>House Fellowship</h3>
         </a>
 
         <div id="exams" class="dropdown-exams">
-           <a href="send-email" class="menu-item"> <h3>Add Teenager/Children</h3> </a>
-           <a href="send-textmsg" class="menu-item"> <h3>Teenagers Details</h3> </a>
+           <a href="send-email" class="menu-item"> <h3>Create House Fellowship</h3> </a>
+           <a href="send-textmsg" class="menu-item"> <h3>View Fellowhip Members</h3> </a>
            <a href="send-textmsg" class="menu-item"> <h3>Children Details</h3> </a>
          </div>
-                                 
+
+       
+        <a href="javascript:void(0)" class="menu-item" onclick="attend()">
+            <h3>Attendance</h3>
+        </a>
 
         <a href="javascript:void(0)" class="menu-item" onclick="attend()">
             <h3>Visitors</h3>
@@ -78,12 +82,12 @@
 
        
          <a href="javascript:void(0)" onclick="members()" class="menu-item">
-            <h3>Events</h3>
+            <h3>Events & Birthdays</h3>
         </a>
        
         <div id="members"  class="dropdown-members">
             <a href="events" class="menu-item"> <h3>Upcoming Events</h3> </a>
-            <a href="birthday" class="menu-item"> <h3>Birthdays</h3> </a>   
+            <a href="birthday" class="menu-item"> <h3>View Birthdays</h3> </a>   
          </div>
 
           <a href="javascript:void(0)" onclick="campreg()" class="menu-item">
