@@ -46,39 +46,6 @@ html,body{
     color:blue;
     }
     
-    input[type=email],input[type=password],input[type=text], select{
-    width:100%;
-    margin:5px 0 15px;
-    height:50px;
-    padding:8px;
-    box-sizing:border-box;
-    border: 0;
-    border-bottom:1px solid black;
-    font-size:1.1em;
-    justify-content:center;
-    text-align:left;
-    background-color:#f8f8f8;
-    outline:none;
-    font-family:'mukta',sans-serif;
-    font-weight:bold;
-    }
-    
-    input[type=email]:hover,input[type=password]:hover{
-    border:2px solid black;
-    background-color: white;
-    border-radius:4px;
-    }
-
-    label{
-    margin:-15px 0 0 10px ;
-    font-size:0.9em;
-    
-    font-family:'ubuntu',sans-serif;
-    font-weight:bold;
-    letter-spacing:-0.4px;
-    position:absolute;
-    
-    }
     .submit{
     width:100%;
     margin:0 0 0 0;
@@ -203,30 +170,49 @@ html,body{
     border-radius:10px;
    
     }
+
+    .login-details{
+        padding:30px;
+    }
     
     
-    
-    .login-details {
-    text-align:center;
-    width:100%;
-    height:100%;
-    position:relative; 
-    padding:5px 35px 0;
-    border:1px solid transparent;
-    margin:0 0 0 0px;
-    text-align: center;
-    align-items: center;
-    }
-    .email-details {
-    margin:0px 0  0 0px;
-    border:1px solid white;
-    width:100%;
-    }
-    .password-details {
-    margin:0px 0  0 0px;
-    border:1px solid white;
-    width:100%;
-    }
+    .inputbox-details,.button-details {
+        border:1px solid transparent;
+        width:100%;
+        display:flex;
+        padding:0 10px 0 10px;
+        flex-direction: column;
+        margin-top:5px;
+        justify-content:space-around;
+        }
+     
+        .inputbox-details label{
+         margin:10px 0 5px 0;
+        font-size:0.9em;
+        text-align:left;
+        font-weight:bold;
+        letter-spacing:0.4px;
+       
+        }
+     
+     
+     input[type=email],input[type=password],input[type=text],input[type=number],input[type=date],input[type=month],input[type=year], select{
+      width:100%;
+      box-sizing:border-box;
+      outline:none;
+      font-family:'poppins',sans-serif;
+      font-weight:600;
+      margin-bottom:10px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: white;
+      font-size: 0.8em;
+        }
+     
+        input[type=email]:hover,input[type=password]:hover,input[type=text]:hover,select:hover, input[type=number]:hover{
+        border:2px solid black;
+        }
     
     .logobox{
     font-size:0.8em;
@@ -235,25 +221,12 @@ html,body{
     border:1px solid transparent;
     width:80%;
     height:50px;
-    font-family:"lato",sans-serif;
     text-align:center;
     justify-content:center;   
     align-items: center;   
     margin-top:20px;    
     }
     
-    .sub-container .sub-logo{
-    top:0;
-    }
-    
-    
-    .sub-container .logoo{
-    font-family:"ubuntu",sans-serif;
-    font-size:2em;
-    font-weight:bold;
-    margin:0 0 0 0;
-    color:black;
-    }
     
     .before{
     margin:20px 0 0 0px;
@@ -293,55 +266,7 @@ html,body{
     justify-content: center;
     }
     
-    
-    .lang{
-    display:flex;
-    }
-    
-    
-    .languageb{
-    right:10px;
-    position:absolute;
-    }
-    
-    .languagea {
-    left:10px; 
-    position:absolute;
-    }
-    
-    .languagea span{
-    font-weight:bold;
-    color:grey;
-    font-size:1.2em;
-    }
-    .languageb ul li{
-    list-style-type :none; 
-    font-size:1.2em;
-    color:#4267B2;
-    }
-    
-    .languagea ul li{
-    list-style-type :none; 
-    font-size:1.2em;
-    color:#4267B2;
-    }
-    
-    .abt{
-    display:flex;
-    margin:70px 0 0 70px;
-    }
-    
-    .abt ul{
-    display:flex;
-    
-    }
-    
-    .abt ul li{
-    padding:10px 10px 10px 10px;
-    list-style-type :none;
-    color:grey;
-    }
-    
+   
     footer{
         font-size:0.8em;
         font-family:'poppins',sans-serif;

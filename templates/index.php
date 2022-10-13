@@ -80,7 +80,7 @@
 					<li><a href="#">About Us</a></li>
 					<li><a href="#">Annoucement</a></li>
 					<li><a href="#">Upcoming Events</a></li>
-				<li><a href="signin.php" class="resume_view">Login</a></li> 
+				<li><a href="../members/signin.php" class="resume_view">Login</a></li> 
 				</ul>
 				
 				<div class="bars">

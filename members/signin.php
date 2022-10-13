@@ -2,10 +2,10 @@
 session_start();
 //include("../Controllers/logincontroller.php"); 
 
-include '../Models/Auth.php';  
-include '../Models/User.php';  
-include '../Models/Login.php';  
-include '../Models/Register.php';       
+include './Models/Auth.php';  
+include './Models/User.php';  
+include './Models/Login.php';  
+include './Models/Register.php';       
 
 
   // create of object of the user class
@@ -15,19 +15,19 @@ $loginInstance= new Login($conn);
 $registerInstance= new Register($conn);
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
-     $authInstance->redirect('dashboard.php');
+     $authInstance->redirect('home.php');
 }        
 
 ?> 
         <!DOCTYPE html>
         <html>
         <head>
-        <title>Afrimama Login dashboard</title>
+        <title>Sign in to Vlbc portal</title>
 
         <?php include '../Includes/metatags.php' ; ?>
         
-        <link rel="stylesheet" href="../Resources/css/login.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="../Resources/css/loader.css">
+        <link rel="stylesheet" href="./Resources/css/login.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./Resources/css/loader.css">
       
         </head>
         
@@ -43,48 +43,42 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
         <div class="sub-container">
         
         <div class="logobox">
-          <div class="sub-logo">
-            <p class="logoo">Afrimama admin login</p>
-          </div>
+            <p class="logoo">Member Login Portal</p>
         </div>
         
         <div class="login-details">
           <form action="#">
              <div class="error"><p></p></div><br>
                 
-                <div class="email-details">
-                     <input type="email" name="email" placeholder="Email Address" autofocus required>
+                <div class="input-details">
+                     <label for="Firstname">Firstname</label>
+                     <input type="text" name="Firstname" placeholder="Firstname" autofocus required>
+                </div>
+
+                <div class="input-details">
+                     <label for="Lastname">Lastname</label>
+                     <input type="text" name="Lastname" placeholder="Lastname" autofocus required>
                 </div>
                 
-                <div class="password-details">
-                    <span  id="show" onclick="check()">
-                    <i class="fa fa-eye"></i>
-                    </span>
-                    <input type="password" id="pass" name="password" placeholder="Password"     required autocomplete="off">
+                <div class="input-details">
+                <label for="Lastname">MemberID</label>
+                    <span  id="show" onclick="check()"> <i class="fa fa-eye"></i> </span>
+                    <input type="password" id="pass" name="memberid" placeholder="MemberID"     required autocomplete="off">
                 </div>
                 
+                <div class="input-details">
                 <button class="submit" name="login">Log In</button>
-                
-                <div class="forgetbox">   
-                    <a href="email-ver.php" class="forget">Forgot password?</a>
-                </div>
-                
-                <div class="before">
-                     <p class="or">  or  </p>
-                </div>
-        
-                <div class="create">
-                   <a href ="signup.php" class="createbut"> Create New  Account </a>
-              </div>
+               </div>
         
             </form>  
          </div>
+         
         </div>
         </div>
       </main> 
         
         
-        <script src="../Resources/js/loader.js"></script> 
+        <script src="./Resources/js/loader.js"></script> 
         
         
   <script type="text/javascript">
@@ -133,8 +127,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
         
       	      	let data=xhr.responseText;
       	     	if(data == "success"){
-      				location.href="dashboard.php";
-           // window.history.pushState('',"homeee","home.php");
+      				location.href="home.php";
+       
      	       	 }
          	 	else{
             	 error.textContent=data;
@@ -152,7 +146,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
               }//DONE
       }
       
-      xhr.open("POST","../Controllers/logincontroller.php",true);
+      xhr.open("POST","./Controllers/logincontroller.php",true);
       let formdata=new FormData(form);
       xhr.send(formdata);     
     }
