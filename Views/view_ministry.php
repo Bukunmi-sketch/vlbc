@@ -14,9 +14,6 @@ $registered_date = $userInfo['date'];
 
 $name = $firstname . $lastname;
 
-
-// include './components/activity.php';
-//ob_end_clean(); 
 ?>
 <!doctype html>
 <html lang="en">
