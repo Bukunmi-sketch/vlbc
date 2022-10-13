@@ -67,9 +67,14 @@
          </div>
 
        
-        <a href="javascript:void(0)" class="menu-item" onclick="attend()">
+        <a href="javascript:void(0)" class="menu-item" onclick="visit()">
             <h3>Attendance</h3>
         </a>
+
+        <div id="visit"  class="dropdown-attendance">
+           <a href="mark_attendance" class="menu-item"> <h3>Mark Attendance</h3> </a>
+           <a href="view_attendance" class="menu-item"> <h3>View Attendance</h3> </a>
+         </div>
 
         <a href="javascript:void(0)" class="menu-item" onclick="attend()">
             <h3>Visitors</h3>

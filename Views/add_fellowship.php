@@ -42,7 +42,7 @@
         <form action="#" method="POST">
             <div class="error"></div>
         <div class="inputbox-details">
-             <input type="text" id="passa" name="unit_name" value="" placeholder="Add New House Fellowship" autofocus required>
+             <input type="text" id="passa" name="fellowshipname" value="" placeholder="Add New House Fellowship" autofocus required>
          </div>
 
          <div class="button-details">
@@ -56,8 +56,8 @@
  </div>
 
  <?php 
-          $stmt=$unitInstance->getunitMinistry();
-          $unitData=$stmt->fetchAll(PDO::FETCH_ASSOC);
+          $stmt=$fellowshipInstance->getFellowship();
+          $fellowshipData=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
         ?>
  <?php  if($stmt->rowCount() > 0 ): ?>
@@ -67,24 +67,24 @@
   <table>
     <tr>
       <th>Manage</th>
-      <th>unit Name</th>
+      <th>fellowship Name</th>
       <th>Created by</th>
       <th>Created_date</th>
      
     </tr>
-    <?php foreach($unitData as $unit): ?>
+    <?php foreach($fellowshipData as $fellowship): ?>
     <tr>
       <td>  <button class="deletebtn"> Delete </button></td>
-      <td> <?php echo  "{$unit['name']}" ; ?> </td>
-      <td> <?php echo  "{$unit['added_by']}" ; ?>  </td>
-      <td>  <?php  echo date("D,F j Y",  strtotime($unit['created_at'])); ?> </td>
+      <td> <?php echo  "{$fellowship['name']}" ; ?> </td>
+      <td> <?php echo  "{$fellowship['added_by']}" ; ?>  </td>
+      <td>  <?php  echo date("D,F j Y",  strtotime($fellowship['added_date'])); ?> </td>
     </tr>
       <?php endforeach ?>
   </table>
 
       <?php else: ?>
       <div class="no-value" style="text-align:center">
-            <h4>you have not added any unit</h4>
+            <h4>you have not added any fellowship</h4>
       </div>      
        <?php endif ?>
 
@@ -98,7 +98,7 @@
    </main>
            <script src="../Resources/js/app.js"></script>
            <script src="../Resources/js/sidebar.js"></script>
-           <script src="../Resources/js/createunit.js"></script>
+           <script src="../Resources/js/createfellowship.js"></script>
      </body>
 
 </html>

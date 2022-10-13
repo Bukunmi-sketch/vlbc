@@ -139,7 +139,7 @@ $registered_date = $userInfo['date'];
                                 </div>
 
                                 <div class="inputbox-details">
-                                    <label for="ministry">Ministry/Unit</label>
+                                    <label for="ministry">Ministry</label>
                                     <select name="ministry">
                                         <?php
                                         $stmt = $unitInstance->getunitMinistry();
@@ -165,8 +165,8 @@ $registered_date = $userInfo['date'];
                                 </div>
 
                                 <div class="inputbox-details">
-                                    <label for="unit">Unit</label>
-                                    <select name="unit">
+                                    <label for="unit">Department</label>
+                                    <select name="department">
                                         <option value="Children">Children</option>
                                         <option value="Teenagers">Teenagers</option>
                                         <option value="Youth only">Youth only</option>
@@ -187,12 +187,19 @@ $registered_date = $userInfo['date'];
                                 </div>
 
                                 <div class="inputbox-details">
-                                    <label for="marital">House Fellowship</label>
-                                    <select name="gender">
-                                        <option value="Male">Married</option>
-                                        <option value="Female">Single</option>
-                                        <option value="Female">Divorced</option>
-                                        <option value="Female">Widow</option>
+                                    <label for="fellowship">House Fellowship</label>
+                                    <select name="fellowship">
+                                    <?php
+                                        $stmt = $fellowshipInstance->getFellowship();
+                                        $fellowshipData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        if ($stmt->rowCount() > 0) :
+                                        ?>
+                                            <?php foreach ($fellowshipData as $fellowship) : ?>
+                                                <option value="<?php echo  "{$fellowship['name']}"; ?> "><?php echo  "{$fellowship['name']}"; ?> </option>
+                                            <?php endforeach ?>
+                                        <?php else : ?>
+                                            <option value="">No fellowship family, create Now!</option>
+                                        <?php endif ?>
                                     </select>
                                 </div>
                             </div>
@@ -202,7 +209,7 @@ $registered_date = $userInfo['date'];
 
                                 <div class="inputbox-details">
                                     <label for="marital">Marital Status</label>
-                                    <select name="gender">
+                                    <select name="marital">
                                         <option value="Male">Married</option>
                                         <option value="Female">Single</option>
                                         <option value="Female">Divorced</option>
@@ -211,8 +218,8 @@ $registered_date = $userInfo['date'];
                                 </div>
 
                                 <div class="inputbox-details">
-                                    <label for="ministry">Birthday date</label>
-                                    <select name="ministry">
+                                    <label for="date">Birthday date</label>
+                                    <select name="birthdate">
 
                                         <?php for ($i = 1; $i <= 31; $i++) : ?>
                                             <option value="<?php echo $i; ?> "><?php echo $i; ?> </option>
@@ -224,12 +231,12 @@ $registered_date = $userInfo['date'];
 
 
                                 <div class="inputbox-details">
-                                    <label for="month">Month</label>
+                                    <label for="month">Birthday Month</label>
 
                                     <?php
                                      $months= ["January","February","March","April","May","June","July", "August","September","October","November","December"];
                                     ?>
-                                    <select name="birthday">
+                                    <select name="birthmonth">
                                         <?php foreach ($months as $month) : ?>
                                             <option value="<?php echo $month; ?> "><?php echo $month; ?> </option>
                                         <?php endforeach ?>

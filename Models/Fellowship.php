@@ -39,7 +39,7 @@ require '../Includes/db.inc.php';
 public function IfFellowshipExisted($fellowship){
     try{
     
-      $sql="SELECT * FROM fellowship WHERE name =:fellowship";
+      $sql="SELECT * FROM fellowships WHERE name =:fellowship";
       $stmt= $this->db->prepare($sql);
       $stmt->bindParam(':fellowship', $fellowship);
       $stmt->execute();
@@ -59,7 +59,7 @@ public function IfFellowshipExisted($fellowship){
   
     public function getFellowship()
     {             
-      $sql="SELECT * FROM fellowship";
+      $sql="SELECT * FROM fellowships";
       $stmt=$this->db->prepare($sql);
       $stmt->execute();
       return $stmt;
@@ -67,7 +67,7 @@ public function IfFellowshipExisted($fellowship){
 
  
         public function fetchFellowshipMembers($fellowship){
-          $sql="SELECT * FROM members WHERE fellowship=:fellowship";
+          $sql="SELECT * FROM members WHERE fellowships=:fellowship";
           $stmt=$this->db->prepare($sql);
           $stmt->bindParam(':fellowship',$fellowship );
           $stmt->execute();
@@ -133,7 +133,7 @@ public function IfFellowshipExisted($fellowship){
       
       
         <?php }else{ ?>
-          <p>There are no members here</p>
+          <p>There are no family in this fellowship yet</p>
         
       <?php     }
      //   return  ob_get_clean();

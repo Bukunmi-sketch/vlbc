@@ -23,6 +23,11 @@ function manage(){
     document.getElementById("manage").classList.toggle("show");
 }
 
+function visit(){
+    document.getElementById("visit").classList.toggle("show");
+}
+
+
 function campreg(){
     document.getElementById("campreg").classList.toggle("show");
 }

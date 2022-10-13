@@ -10,7 +10,7 @@
     include '../Models/Register.php';  
     include '../Models/Member.php';  
     include '../Models/Announcement.php';  
-    include '../Models/Customer.php';
+    include '../Models/Fellowship.php';
     include '../Models/Unit.php';
     include '../Models/Report.php';
     include '../Models/Notification.php';
@@ -21,6 +21,7 @@
     $userInstance= new User($conn);
     $loginInstance= new Login($conn);
     $registerInstance= new Register($conn);
+    $fellowshipInstance = new Fellowship($conn);
     $memberInstance = new User\Member($conn);
     $announceInstance = new Announcement($conn);
     $imgInstance= new Uploadimg($conn);

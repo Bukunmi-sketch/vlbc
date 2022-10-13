@@ -14,15 +14,12 @@ $registered_date = $userInfo['date'];
 
 $name = $firstname . $lastname;
 
-
-// include './components/activity.php';
-//ob_end_clean(); 
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-  <title>Ministry </title>
+  <title> Fellowship </title>
   <?php include '../Includes/metatags.php'; ?>
 
   <link rel="stylesheet" type="text/css" href="../Resources/css/left.css">
@@ -42,24 +39,24 @@ $name = $firstname . $lastname;
         <div class="min-sub-container">
           <div class="spanheader">
             <span>
-              <h4> View all Ministries </h4>
+              <h4> View all Fellowship </h4>
             </span>
           </div>
 
           <form action="#" method="POST">
             <div class="error"></div>
             <div class="inputbox-details">
-              <select name="ministry">
+              <select name="fellowship">
                 <?php
-                $stmt = $unitInstance->getunitMinistry();
-                $unitData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $stmt = $fellowshipInstance->getFellowship();
+                $fellowshipData = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 if ($stmt->rowCount() > 0) :
                 ?>
-                  <?php foreach ($unitData as $unit) : ?>
-                    <option value="<?php echo  "{$unit['name']}"; ?> "><?php echo  "{$unit['name']}"; ?> </option>
+                  <?php foreach ($fellowshipData as $fellowship) : ?>
+                    <option value="<?php echo  "{$fellowship['name']}"; ?> "><?php echo  "{$fellowship['name']}"; ?> </option>
                   <?php endforeach ?>
                 <?php else : ?>
-                  <option value="">No unit, create Now!</option>
+                  <option value="">No fellowship, create Now!</option>
                 <?php endif ?>
               </select>
 
@@ -86,7 +83,7 @@ $name = $firstname . $lastname;
   </main>
   <script src="../Resources/js/app.js"></script>
   <script src="../Resources/js/sidebar.js"></script>
-  <script src="../Resources/js/viewministry.js"></script>
+  <script src="../Resources/js/viewfellowship.js"></script>
 </body>
 
 </html>

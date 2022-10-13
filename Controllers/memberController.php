@@ -30,8 +30,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $prev_church=$authInstance->validate($_POST['prev_church']);
     $state_origin=$authInstance->validate($_POST['state_origin']);
     $ministry=$authInstance->validate($_POST['ministry']);
-    $unit=$authInstance->validate($_POST['unit']);
-    $birthday=$authInstance->validate($_POST['birthday']);
+    $fellowship=$authInstance->validate($_POST['fellowship']);
+    $marital=$authInstance->validate($_POST['marital']);
+    $department=$authInstance->validate($_POST['department']);
+    $birthmonth=$authInstance->validate($_POST['birthmonth']);
+    $birthday=$authInstance->validate($_POST['birthdate']);
     $date=date("y-m-d h:ia");
     $admin_id=$_POST['admin'];
 
@@ -49,7 +52,8 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                    if($imgInstance->imgextension($picture)){
                      if($imgInstance->largeImage($dpsize)){
                          if($imgInstance->moveImage($dptemp, $dirfile)){
-                             if(  $memberInstance->createMembers($admin_id, $picture, $firstname, $lastname, $rollid, $email, $mobile, $gender, $residence, $prev_church, $origin, $ministry, $unit,$birthday, $date) ){
+                             if(  $memberInstance->createMembers($admin_id, $picture, $firstname, $lastname, $rollid, $email, $mobile, $gender, 
+                             $marital, $fellowship, $residence, $prev_church, $state_origin, $ministry, $department, $birthday, $birthmonth, $date) ){
                             
                                 echo "success";
                             }else{
@@ -78,7 +82,8 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         if($memberInstance->IfMemberExisted($firstname, $lastname, $mobile)){ 
             if($memberInstance->checkEmail($email)){      
                 if($memberInstance->checkMemberid($rollid)){
-                      if(  $memberInstance->createMembers($admin_id, $picture, $firstname, $lastname,$rollid, $email, $mobile, $gender, $residence, $prev_church, $state_origin, $ministry, $unit, $birthday, $date) ){
+                      if(  $memberInstance->createMembers($admin_id, $picture, $firstname, $lastname, $rollid, $email, $mobile, $gender, 
+                      $marital, $fellowship, $residence, $prev_church, $state_origin, $ministry, $department, $birthday, $birthmonth, $date) ){
                      
                          echo "success";
                      }else{

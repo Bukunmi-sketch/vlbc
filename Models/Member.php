@@ -14,10 +14,10 @@ require '../Includes/db.inc.php';
         }
 
         //create new Members
-        public function createMembers($admin_id, $picture, $firstname, $lastname, $rollid, $email, $mobile, $gender, $residence, $prev_church, $origin, $ministry, $unit, $birthday, $date){  
+        public function createMembers($admin_id, $picture, $firstname, $lastname, $rollid, $email, $mobile, $gender, $marital, $fellowship, $residence, $prev_church, $origin, $ministry, $department, $birthday, $birthmonth, $date){  
                try{
                 
-                   $sql="INSERT INTO members(admin_id, image, firstname, lastname, rollid, email, mobile,	gender,	residence, previous_church, origin, ministry, unit, birthday, date	)VALUES   (:admin_id, :picture,:firstname, :lastname, :rollid,  :email, :mobile, :gender, :residence, :prev_church, :origin, :ministry, :unit, :birthday, :created )";
+                   $sql="INSERT INTO members(admin_id, image, firstname, lastname, rollid, email, mobile,	gender,	marital_status, fellowships, residence, previous_church, origin, ministry, department, birthday, birthmonth, date	)VALUES   (:admin_id, :picture,:firstname, :lastname, :rollid,  :email, :mobile, :gender, :marital, :fellowship, :residence, :prev_church, :origin, :ministry, :department, :birthday, :birthmonth, :created )";
                      $stmt= $this->db->prepare($sql);
                       $result=  $stmt->execute([
                         ":admin_id"=>$admin_id,
@@ -26,14 +26,17 @@ require '../Includes/db.inc.php';
                         ":rollid" =>$rollid,
                         ":email" =>$email,
                         ":mobile" =>$mobile,
+                        ":marital" =>$marital,
+                        ":fellowship" =>$fellowship,
                         ":gender" =>$gender,
                         ":residence" =>$residence,
                         ":prev_church" =>$prev_church,
                         ":picture" => $picture,
                         ":origin" => $origin,
                         ":ministry" =>$ministry,
-                        ":unit" =>$unit,
+                        ":department" =>$department,
                         ":birthday" => $birthday,
+                        ":birthmonth" =>$birthmonth,
                         ":created" =>$date
                    ]);
    
