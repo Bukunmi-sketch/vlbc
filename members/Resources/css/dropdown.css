@@ -1,0 +1,26 @@
+.dropdown-content,
+.dropdown-attendance,
+.dropdown-campreg,
+.dropdown-members,
+.dropdown-exams{
+    display: none;
+    transition:1s;
+    background-color:#333;
+    transform:1s;
+   
+}
+
+/* Add Animation */
+@keyframes slowdrop {
+    from {display: none; opacity: 0}
+    to {display: block; opacity: 1}
+  }
+
+
+
+.show {
+    display:block;
+    transition:1s;
+    animation-name: slowdrop;
+    animation-duration:2s;
+}

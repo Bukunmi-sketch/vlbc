@@ -1,7 +1,7 @@
 <!DOCTYPE html>
          <html lang="en">
          <head>
-         <title>Bukunmi Olarinde profile</title>
+         <title>Victoryland Baptist Church</title>
          
          <meta charset="utf-8">
          
@@ -56,7 +56,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Mukta:wght@600&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gantari:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,600;0,700;1,100&family=Noto+Sans:wght@200;400;500;700&family=Nunito+Sans:wght@200;300;400;600;700;900&family=Prompt:wght@100;200;300;500&family=Quicksand:wght@300;400;600;700&family=Rubik+Moonrocks&family=Work+Sans:wght@200;300;400;600;800&display=swap" rel="stylesheet">
 
-       <link rel="stylesheet" type="text/css" href="only.css">
+       <link rel="stylesheet" type="text/css" href="index.css">
  </head>
  
  		<body id="body" onload="load()">
@@ -77,12 +77,10 @@
 				<h2 class="logo">Olarinde<span> Bukunmi</span></h2>
 				<ul>
 					<li><a href="javascript:void(0);" class="homelink">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Skills & Tools</a></li>
-					<li><a href="#">Service</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Experience</a></li>
-				<li><a href="https://drive.google.com/file/d/17YROUQy-_5HQ9zc07UD6Dis6xQXp8Pfn/view?usp=sharing" class="resume_view">Resume </a></li> 
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Annoucement</a></li>
+					<li><a href="#">Upcoming Events</a></li>
+				<li><a href="signin.php" class="resume_view">Login</a></li> 
 				</ul>
 				
 				<div class="bars">
@@ -93,45 +91,6 @@
 				</div>
 			  
 			</header>
-<!--
- 		<div id="card"></div>
--->
-
-<section class="welcome">
-	<div class="container-holder">
-	  <div class="container" id="container">
-			
-			<div class="landing-details">
-			       <div class="profile-name" > Olarinde <span> Bukunmi</span>  </div> 
-			       <p class="about" id="about"></p>
-			       
-			       <!-- social media connections-->
-			       <div class="connect"> 
-			           <a href="https://mobile.facebook.com/bukunmi.olarinde.9" ><i class="fa fa-facebook-f"></i></a>
-			           <a href="https://www.Instagram.com/bukunmiiie" ><i class="fa fa-instagram"></i></a>      
-			           <a href="https://github.com/Bukunmi-sketch"> <i class="fa fa-github"></i></a> 
-			           <a href="https://www.linkedin.com/in/bukunmi-olarinde-194b0b207" ><i class="fa fa-linkedin"></i></a> 
-			           <a href="https://www.twitter.com/bukunmiiie" ><i class="fa fa-twitter"></i></a> 
-			           <a href="https://www.pinterest.com/bukunmiiie" ><i class="fa fa-pinterest"></i></a> 
-			           <a href="mailto:Olarindebukunmi@gmail.com" ><i class="fa fa-google"></i></a>
-			     </div>
-
-		        <button id="see-more" class="see-more" ><p>See more about me</p></button>
-		</div>
-		<div class="landing-image">
-            <img src="images/bucxxc.jpg" class="profile-photo" alt="">
-	    </div>
-
-	</div>	
-</div>	 
-   </section> 		
- 		
-	
- 		 
- 	 		
- 		<!--card-->    
- 		
- 		
  		 	
      <div class="seecard">
  	     			<!--1-->
@@ -682,7 +641,7 @@
 			  AOS.init();
 		  </script>
  	 
-<script src="b.js"></script>
+<script src="index.js"></script>
  
  </body>
  </html>

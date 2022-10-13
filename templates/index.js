@@ -31,6 +31,7 @@ let secondpage=document.querySelector(".seecard");
 let seemore=document.querySelector(".see-more");
 let homebutton=document.querySelector(".homelink");
 
+/*
 seemore.onclick=()=>{
     firstpage.style.display="none";
     secondpage.style.display="block";
@@ -41,7 +42,7 @@ homebutton.onclick=()=>{
     secondpage.style.display="none";
 }
 
-
+*/
 
 function load(){
     setInterval(rotate,3500); 
@@ -61,7 +62,7 @@ type();
 
 function rotate(){
     document.getElementById("loader").style.display="none";
-    document.querySelector(".container-holder").style.display="block";
+    document.querySelector(".seecard").style.display="block";
 
 //setInterval(rotate,5000);
 }

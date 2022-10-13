@@ -41,7 +41,7 @@
                                    
                  }
                    
-             xhr.open("POST","../Controllers/viewbirthController.php",true);
+             xhr.open("POST","../Controllers/fellowviewController.php",true);
              let formdata=new FormData(forme);
              xhr.send(formdata);
             }

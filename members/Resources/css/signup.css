@@ -1,0 +1,354 @@
+
+
+*{
+   margin:0;
+   padding:0;
+   outline:0;
+   box-sizing:border-box;
+   }
+   
+   html,body{
+   background-color:#f2f2f2;
+   color:black;
+   height:100%;
+   background:url("./gadgets.jpg");
+   
+   }
+   
+   .newpostheader{
+      display:flex;
+      padding:5px 5px 5px 5px;
+      background-color:white;
+      width:100%;
+      position:fixed;
+      height: 40px;
+      border:1px solid #cecece;
+      color: black;
+      margin:0px 0 0 0px;
+      z-index: 200;
+      top:0;
+      }
+      
+      .newpostheader h{
+      font-weight:bold;
+      font-size:1.1em;
+      margin:0 auto 0;
+      font-family:"Poppins",sans-serif;
+      }
+      
+      
+      .newpostheader span i{
+      left:10px;
+      display:flex;
+      font-size:0.8em;
+       margin:10px 0 0 0;
+      }
+      
+   
+   
+   input[type=email],input[type=password],input[type=text]{
+      width:100%;
+      box-sizing:border-box;
+      outline:none;
+      font-family:'poppins',sans-serif;
+      font-weight:600;
+      margin-bottom:10px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: white;
+      font-size: 0.8em;
+   }
+   
+   input[type=text]:hover,input[type=email]:hover,select,input[type=password]:hover{
+   border:2px solid black;
+   background-color: white;
+   border-radius: 3px;
+   }
+   
+   
+   select{
+   height:50px;
+   width:90%;
+   border: 1px solid #cecece;
+   background-color:white;
+   border-radius:5px;
+   margin:0px 0 0 15px;
+   font-size:0.8em;
+   text-align: center;
+   font-family: "lato",sans-serif;
+   }
+   .btn{
+   width:90%;
+   height:50px;
+   border-radius:3px;
+   text-align:center;
+   color:#ffffff;
+   background-color:#0E6EB8;
+   border:1px solid #0E6EB8;
+   float:center;
+   margin:10px 0 0 15px;
+   font-family:'lato',sans-serif;
+   font-weight:bold;
+   }
+   
+   
+   
+   .error{
+   width:92%;
+   margin:10px 0 0 10px;
+   padding:8px 8px;
+   text-align:center;
+   border-radius: 5px;
+   font-size: 0.9em;
+   font-family:'poppins',sans-serif;
+   font-weight:bold;
+   display:none;
+   color:#721624;
+   background-color:#f8d7da;
+   border:1px solid #f5c6cb;
+   }
+   form .name-details{
+      display:flex;
+   }
+   
+   form .fields{
+   display:flex;
+   flex-direction:column;
+   }
+   
+   form .name-details .fields label,
+   form .others .others-field label{
+   margin:10px 0 0 20px;
+   font-size:0.9em;
+   text-align:left;
+   font-family:'lato',sans-serif;
+   font-weight:bold;
+   letter-spacing:0.4px;
+   position:relative;
+   }
+   
+   form .name-details .fields:first-child{
+          margin-right:10px;
+   }
+   
+   form .name-details .fields:last-child{
+          margin-left:0;
+   }
+   
+   
+   form .name-details .fields:last-child input[type=text]{
+   margin:0 0 0 0;
+   
+   }
+   
+   .others{
+   margin:10px 0 0 0;
+   /*display:flex;*/
+   }
+   
+   form .others .others-field{
+   display:flex;
+   flex-direction:column;
+   }
+   
+   #showa{
+   color:black;
+   border-radius:4px;
+   width:5%;
+   height:15px;
+   margin:40px 0 0 0;
+   right:25px;
+   position:absolute;
+   }
+   #showb{
+   color:black;
+   border-radius:4px;
+   width:5%;
+   height:15px;
+   margin:40px 0 0 0;
+   right:25px;
+   position:absolute;
+   }
+   
+   .already{
+   font-family:"lato",sans-serif;
+   font-weight:bold;
+   font-size: 0.8em;
+   
+   }
+   
+   
+   
+   
+   .container{
+   top:50px; 
+   width:100%;
+   margin:0;
+   padding:0;
+   }
+   
+    .sub-container{
+    margin:60px auto 0;
+    width:100%;
+    max-width:400px;
+    display:flex;
+    flex-direction: column;
+    border:1px solid #ccc;
+    background-color:#fff;
+    padding:0 0 50px 0;
+    border-radius: 3px;
+    }
+    
+    .login-details {
+    text-align:center;
+    width:100%;
+    height:100%;
+    position:relative; 
+    margin:-20px 0 0 0;
+    border:1px solid transparent;
+    padding:0 20px 20px 20px;
+    }
+    
+    .logobox{
+     font-size:0.8em;
+     font-weight:bold;
+     color:black;
+     border:1px solid transparent;
+     width:100%;
+     height:50px;
+     font-family:"lato",sans-serif;
+     text-align:center;
+     justify-content:center;   
+     align-items: center;   
+     margin-top:20px;    
+     }
+     
+     .sub-container .sub-logo{
+     top:0;
+     }
+     
+     
+     .sub-container .logoo{
+     font-family:"ubuntu",sans-serif;
+     font-size:1.2em;
+     font-weight:bold;
+     margin:0 0 0 0;
+     color:black;
+     }
+    
+    .create{
+    font-family:"lato",sans-serif;
+    font-size:0.8em;
+    font-weight:bold;
+    color:black;
+    margin-top:20px;
+    }
+   .createbut{
+      width:100%;
+      box-sizing:border-box;
+      outline:none;
+      font-family:'poppins',sans-serif;
+      font-weight:600;
+      margin-bottom:10px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: white;
+      font-size: 0.8em;
+      text-decoration: none;
+      color: black;
+      }
+      
+      
+
+
+    footer{
+      font-size:0.8em;
+      font-family:'poppins',sans-serif;
+      font-weight:bold;
+      word-spacing: 0.4em;
+      position: relative;
+      text-align:center;  
+      padding:50px 0;  
+      height:30px;  
+      border-top:1px solid #cecece;
+      background-color: white;
+  }
+
+  .contact{
+    background-color:black;
+    color:white;
+    padding:5px 30px;
+    margin:0 0 0 10px;
+    border-radius:4px;
+    border:1px solid white;
+    font-size:1em;
+    font-family:'poppins',sans-serif;
+    font-weight:bold;
+    word-spacing: 0.2em;
+    position: relative;  
+  }
+     
+    
+    @media screen and (max-width:480px){
+       body{
+         background-color: white;
+     }
+ 
+     
+     .container{
+     margin-top:40px;
+     border-top:1px solid white;
+     height:400px;
+     }
+
+
+    .sub-container{
+    flex-direction:column;
+    max-width:480px;
+    height:700px;
+    margin-top:0;
+    border:1px solid white;
+    border-radius: 0;
+    }
+     
+     .logobox{
+     width:100%;
+     height:150px;
+     border:1px solid white;
+     position:relative;
+     text-align:center;
+     }
+     
+     
+     .sub-container .sub-logo{
+     
+      height:100px;        
+         align-items:center;
+         display:flex;
+         justify-content:center;
+      
+     }
+     
+     .logoo{
+          
+         align-items:center;
+         display:flex;
+         justify-content:center;
+     }
+    
+    
+    .login-details {
+    width:100%;
+    margin-top:-10px;
+    }
+    
+    footer{
+     margin-top:0;
+  
+    }
+
+    
+    }
+   
