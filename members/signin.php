@@ -5,17 +5,16 @@ session_start();
 include './Models/Auth.php';  
 include './Models/User.php';  
 include './Models/Login.php';  
-include './Models/Register.php';       
+   
 
 
   // create of object of the user class
 $authInstance= new Auth($conn);
 $userInstance= new User($conn);
 $loginInstance= new Login($conn);
-$registerInstance= new Register($conn);
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
-     $authInstance->redirect('home.php');
+     $authInstance->redirect('./Views/home.php');
 }        
 
 ?> 
@@ -52,18 +51,18 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
                 
                 <div class="input-details">
                      <label for="Firstname">Firstname</label>
-                     <input type="text" name="Firstname" placeholder="Firstname" autofocus required>
+                     <input type="text" name="firstname" placeholder="Firstname" autofocus required>
                 </div>
 
                 <div class="input-details">
                      <label for="Lastname">Lastname</label>
-                     <input type="text" name="Lastname" placeholder="Lastname" autofocus required>
+                     <input type="text" name="lastname" placeholder="Lastname" autofocus required>
                 </div>
                 
                 <div class="input-details">
                 <label for="Lastname">MemberID</label>
                     <span  id="show" onclick="check()"> <i class="fa fa-eye"></i> </span>
-                    <input type="password" id="pass" name="memberid" placeholder="MemberID"     required autocomplete="off">
+                    <input type="text" id="pass" name="memberid" placeholder="MemberID"     required autocomplete="off">
                 </div>
                 
                 <div class="input-details">
@@ -127,7 +126,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
         
       	      	let data=xhr.responseText;
       	     	if(data == "success"){
-      				location.href="home.php";
+      				location.href="./Views/home.php";
        
      	       	 }
          	 	else{

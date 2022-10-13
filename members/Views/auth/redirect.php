@@ -16,12 +16,13 @@
      $authInstance->redirect("login.php");
   }
 
+  /*
   $_SESSION["lastactivity"]=time();
   $_SESSION['lastactivetime']=date("h:ia");; 
   $_SESSION['lastactivedate']=date("y-m-d");
   $_SESSION['datelastactivity']=date('y-m-d h:i:s');   
-  $loginInstance->lastActivity($_SESSION["id"],$_SESSION["lastactivity"], $_SESSION['lastactivetime'], $_SESSION['lastactivedate'],$_SESSION['datelastactivity']); 
+  
  
-
+*/
 
 ?>

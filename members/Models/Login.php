@@ -15,46 +15,43 @@ require '../Includes/db.inc.php';
 
 
                    //logih users
-   public function login($email,$password){
+   public function login($firstname,$lastname,$memberid){
     try{
        
-         $sql="SELECT * FROM administrator WHERE email =:email";
+         $sql="SELECT * FROM members WHERE firstname =:firstname AND lastname =:lastname AND rollid =:memberid";
          $stmt= $this->db->prepare($sql);
-         $stmt->bindParam(':email', $email);
+         $stmt->bindParam(':firstname', $firstname);
+         $stmt->bindParam(':lastname', $lastname);
+         $stmt->bindParam(':memberid', $memberid);
          $stmt->execute();
          // Check if row is actually returned
          if($stmt->rowCount() > 0 ){
               //Return row as an array indexed by both column name
              $returned_row= $stmt->fetch(PDO::FETCH_ASSOC);  
-             // Verify hashed password against entered password
-           if(password_verify($password, $returned_row['password'])){            
-                     //define session if login was succesful
+            
                 return [
                    'id' =>        $returned_row['id'],
                    'firstname'=>  $returned_row['firstname'], 
                    'email' =>     $returned_row['email'],
                    'lastname' =>  $returned_row['lastname'],
-                   'date' =>      $returned_row['reg_date'],
+                   'date' =>      $returned_row['date'],
                    'password'=>   $returned_row['password']
                    ];
                    
-             echo "password is correct";
-             }else{
-             //   echo "incorrect password";
-                return false;
-                 }
+           //  echo "password is correct";
+           
             } else{
         //    echo "user does not exist";
            return false;
-        }
+            }
     }catch(PDOException $e){
         echo  $e->getMessage(); 
     }
   
 }  //login
-
+/*
 public function loginSetStatusOnline($sessionid){
-    $query="UPDATE administrator SET Status='online' WHERE id=:sessionid ";
+    $query="UPDATE members SET Status='online' WHERE id=:sessionid ";
     $stmt=$this->db->prepare($query);
     $stmt->bindParam(":sessionid", $sessionid);
     if($stmt->execute()){
@@ -63,7 +60,7 @@ public function loginSetStatusOnline($sessionid){
   }
 
   public function lastActivity($sessionid,$activitytime,$activetime,$activedate,$datelastactivity){
-   $query="UPDATE administrator SET LastActivity=:activitytime, LastActiveTime=:activetime, LastActiveDate=:activedate,DateLastActivity=:datelastactivity WHERE id=:sessionid ";
+   $query="UPDATE members SET LastActivity=:activitytime, LastActiveTime=:activetime, LastActiveDate=:activedate,DateLastActivity=:datelastactivity WHERE id=:sessionid ";
    $stmt=$this->db->prepare($query);
    $stmt->bindParam(":sessionid", $sessionid);
    $stmt->bindParam(":activitytime", $activitytime);
@@ -76,7 +73,7 @@ public function loginSetStatusOnline($sessionid){
  }
 
  public function usersLogData($sessionid,$ipaddress,$browsertype){
-    $query="UPDATE administrator SET ip_address=:ipaddress, browser_type=:browser_type WHERE id=:sessionid ";
+    $query="UPDATE members SET ip_address=:ipaddress, browser_type=:browser_type WHERE id=:sessionid ";
     $stmt=$this->db->prepare($query);
     $stmt->bindParam(":sessionid", $sessionid);
     $stmt->bindParam(":ipaddress", $ipaddress);
@@ -87,7 +84,7 @@ public function loginSetStatusOnline($sessionid){
 
    }
 
- 
+ */
 
 }
 
