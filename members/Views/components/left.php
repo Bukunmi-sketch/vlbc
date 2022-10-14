@@ -25,11 +25,11 @@
 
         
         <a href="dashboard"  class="menu-item">
-            <h3>Dashboard</h3>
+            <h3>Home</h3>
         </a>
 
         <a href="Javascript:void(0)"   onclick="myFunction()" class="menu-item">
-            <h3>Manage Members </h3>
+            <h3>Members</h3>
         </a>
 
        
@@ -39,7 +39,7 @@
          </div>
 
          <a href="javascript:void(0)"  class="menu-item" onclick="manage()">
-            <h3>Ministry/Departments</h3>
+            <h3>Your Birthdays</h3>
         </a>
 
         <div id="manage" class="dropdown-content">
@@ -49,7 +49,7 @@
          </div>
 
         <a href="javascript:void(0)"  class="menu-item" onclick="announce()">
-            <h3>Announcement</h3>
+            <h3>Pay Tithes and Offerings</h3>
         </a>
         <div id="announce" class="dropdown-exams">
            <a href="announcement" class="menu-item"> <h3>Add Announcement</h3> </a>
@@ -68,7 +68,7 @@
 
        
         <a href="javascript:void(0)" class="menu-item" onclick="visit()">
-            <h3>Attendance</h3>
+            <h3>Your department</h3>
         </a>
 
         <div id="visit"  class="dropdown-attendance">
@@ -108,7 +108,7 @@
 <!---------------------------------------------------------- EDIT ADMIN ACCOUNT ------------------------------------------------------->     
         <a href="adminedit" class="menu-item">
        <!--    <span><i class="material-icons">settings</i></span> -->
-            <h3>Edit Admin Account</h3>
+            <h3>Your Details</h3>
         </a>
 
         <a href="dashboard?logout=true" class="menu-item">

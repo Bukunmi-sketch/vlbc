@@ -13,7 +13,7 @@
   //when users logs out call the logout function and redirect them to the login page.
   if( isset($_GET['logout']) && ($_GET['logout']=='true')  ){
      $authInstance->logout($sessionid);
-     $authInstance->redirect("login.php");
+     $authInstance->redirect("./signin.php");
   }
 
   /*
