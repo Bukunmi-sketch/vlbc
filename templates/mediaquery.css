@@ -1,0 +1,32 @@
+
+/* ---------------------------MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES-----------------*/
+@media screen and (max-width:900px) {
+    header ul{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        position:absolute;
+        top:50px;
+        height:100vh;
+        background-color: var(--color-white);
+        left:-100%;
+        }
+
+    header ul li{
+        padding:20px;
+        border:1px solid transparent;
+            }   
+    
+    .logo{
+        font-size: 25px;  
+        letter-spacing:0;
+       
+        margin-left:20px;
+               }
+            
+
+    .bars{
+        display: block;
+              }       
+
+}
