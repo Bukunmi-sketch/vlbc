@@ -89,12 +89,12 @@ body {
   border: 1px solid transparent;
   position: relative;
 }
-
+/*
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: var(--color-white);
   position: fixed;
   border: 1px solid transparent;
   height: 69px;
@@ -102,6 +102,7 @@ header {
   z-index: 150;
   top: 0;
 }
+*/
 
 .logoimg {
   height: 40px;
@@ -127,14 +128,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
   position: fixed;
   border: 1px solid transparent;
   height: 65px;
   width: 100%;
   z-index: 150;
   top: 0;
+  box-shadow: 10px 0 10px #cecece;
 }
 
 .logo {
@@ -179,8 +181,8 @@ header ul {
 
 header ul li a {
   text-decoration: none;
-  color: var(--color-white);
-  font-weight: light;
+  color: var(--color-black);
+  font-weight:700;
   font-weight: 0.8em;
 }
 
@@ -199,11 +201,12 @@ header ul li a:hover {
 }
 
 header ul li a.btn:hover {
-  border: 1px solid var(--color-primary);
+  border: 2px solid var(--color-primary);
   padding: 10px 30px;
   border-radius: 4px;
   transition: 0.4s;
-  background-color: black;
+  color: black;
+  background-color: transparent;
 }
 
 header ul li.btn:hover {
@@ -495,6 +498,7 @@ div.event-title {
   color: white;
   font-size: 1.1rem;
   border: 1px solid transparent;
+  
 }
 .service-box h3 {
   text-align: center;
@@ -620,6 +624,24 @@ div.event-title {
   color: var(--color-black);
 }
 
+
+/* ---------------------------SERMONS-----------------*/
+
+.fa-headphones {
+  color: var(--color-white);
+  font-size: 0.6em;
+  background-color: var(--color-primary);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 /* ---------------------------CHURCH PASTORS CORNER-----------------*/
 
 .pastors-container {
@@ -690,7 +712,7 @@ div.event-title {
   font-size: 1.2em;
 }
 
-/* --------------------------PHOTO GALLERIES-----------------*/
+/* --------------------------PHOTO GALLERIES----------------- */
 
 .gallery {
   padding: 20px 0 100px 0;
@@ -827,6 +849,77 @@ div.event-title {
   }
 }
 
+/* --------------------------SERVANTS AND OFFICERS IN GODS VINEYARD-----------------*/
+
+.officer-container {
+  padding: 20px 0 100px 0;
+  border: 1px solid transparent;
+  margin:0;
+  border-radius: 4px;
+}
+
+.officer-container h3 {
+  text-align: center;
+  color: black;
+}
+
+.officer-container .officer-p {
+  font-size: 0.8em;
+  margin: 60px 0 0 40px;
+  font-family: "gantari", sans-serif;
+}
+
+.officer-box {
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.officer-card {
+  display: flex;
+  border: 1px solid transparent;
+  margin: 20px 20px 0 30px;
+  height:400px;
+  width: 300px;
+  flex-direction: column;
+  border-radius: 5px;
+  background: var(--color-white);
+}
+.officer-text {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  width: 100%;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+.officer-card-photo {
+  position: relative;
+  height: 300px;
+  border: 1px solid transparent;
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.officer-card-photo img {
+  width: 100%;
+  padding: 0;
+  height: 300px;
+  border: 1px solid transparent;
+}
+
+.officer-p {
+  margin-top:5px;
+  font-size: 1em;
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+
+
 /* ---------------------------CONTACT ME-----------------*/
 
 .contact-me {
@@ -872,13 +965,6 @@ div.event-title {
   border-radius: 4px;
 }
 
-.pseudo-white {
-  text-align: center;
-  display: flex;
-  color: black;
-  font-size: 1.1rem;
-  border: 1px solid transparent;
-}
 .blog-container h3 {
   text-align: center;
   color: black;
