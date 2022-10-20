@@ -2,7 +2,8 @@
   --color-dark: #241e38;
   --color-light: #f0eef6;
   --color-gray: #9e98b3;
-  --color-primary: #6706ac;
+  --color-halfprimary: #cf2e2e;
+  --color-primary: #ce0f3d;
   --color-secondary: #d6ccff;
   --color-danger: #fb5151;
   --color-black: #000;
@@ -68,9 +69,8 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  color: white;
 }
 
 body {
@@ -118,7 +118,7 @@ header {
 
 span {
   color: var(--color-primary);
-  font-family: "poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ----------------------------------------------------------NAVBAR ---------------------------------------*/
@@ -165,7 +165,7 @@ header {
 
 span {
   color: var(--color-primary);
-  font-family: "poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 header ul li {
@@ -350,32 +350,134 @@ h4 {
 
 /* --------------------------------------------------EVENT BOX-----------------------------------*/
 
-.event-container{
+.event-container {
   padding: 20px 0 100px 0;
   border: 1px solid transparent;
-  background-color: #000;
+  background-color: white;
   margin: 30px 0 0 0;
   border-radius: 4px;
 }
 
-.event-box{
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid red;
+.event-container h3 {
+  text-align: center;
+  color: var(--color-primary);
 }
 
+.before {
+  margin: 5px auto 10px;
+  border: 1px solid transparent;
+  width: 40%;
+}
 
+.or {
+  text-align: center;
+  display: flex;
+  color: black;
+  font-size: 1.1rem;
+  border: 1px solid transparent;
+}
 
+p:before,
+p:after {
+  border-bottom: 1px solid #cecece;
+  margin: 10px;
+  content: " ";
+  width: 40%;
+  flex: 10%;
+}
 
+.event-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
 
+.event-card {
+  height: 170px;
+  width: 45%;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px #cecece;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
 
+.event-first {
+  width: 20%;
+  margin: 0 0 0 10px;
+  border: 1px solid transparent;
+  background-color: #f7e8f0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
 
+.fa-calendar {
+  color: var(--color-white);
+  margin: -15px 0 0 30%;
+  font-size: 1em;
+  background-color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.event-first .event-date {
+  height: 70%;
+  width: 100%;
+  border: 1px solid transparent;
+  font-family: "Mukta", sans-serif;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: bold;
+}
 
+.event-first .event-time {
+  height: 30%;
+  width: 100%;
+  background-color: var(--color-primary);
+  font-weight: bold;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 5px 5px;
+}
 
+.event-second {
+  width: 70%;
+  border: 1px solid transparent;
+}
 
+div.event-title {
+  font-size: 1.2em;
+  color: black;
+  font-weight: bold;
+}
 
+.event-location {
+  font-size: 1em;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+}
 
+.event-location i {
+  color: var(--color-primary);
+  font-size: 1.2em;
+}
 
 /* --------------------------------------------------SERVICE SECTION -----------------------------------*/
 
@@ -387,17 +489,16 @@ h4 {
   border-radius: 4px;
 }
 
-.service-box h3 {
-  font-size: 1.1em;
-  font-weight: bold;
-  align-items: center;
-  position: absolute;
-  justify-content: center;
-  margin: 10px 10px 10px 30%;
+.pseudo-white {
+  text-align: center;
+  display: flex;
+  color: white;
+  font-size: 1.1rem;
   border: 1px solid transparent;
-  padding: 10px 30px;
-  border-radius: 30px;
-  color: var(--color-white);
+}
+.service-box h3 {
+  text-align: center;
+  color: white;
 }
 
 .service-box .service-p {
@@ -417,7 +518,8 @@ h4 {
   display: flex;
   border: 1px solid transparent;
   margin: 20px 0 0 30px;
-  padding: 0 0 50px 0;
+  padding: 10px;
+  height: 300px;
   width: 70%;
   flex-direction: column;
   border-radius: 5px;
@@ -433,13 +535,21 @@ h4 {
 }
 
 .serv-photo {
-  width: 100%;
-  height: 90px;
+  position: relative;
+  height: 50px;
   border: 1px solid #101010;
   font-size: 1.5em;
   text-align: center;
   background-color: #101010;
   border-radius: 5px 5px 0 0;
+}
+
+.serv-photo img {
+  margin: 10px;
+  width: 100%;
+  padding: 0;
+  height: 100px;
+  border: 1px solid transparent;
 }
 
 .serv-photo i {
@@ -452,20 +562,276 @@ h4 {
 }
 
 .i-do {
+  margin-top: 20px;
   font-size: 1.2em;
+  color: var(--color-primary);
+  font-weight: bold;
 }
 
 .do {
-  font-size: 1em;
+  font-size: 0.8em;
   margin-top: 7px;
   font-weight: light;
+  text-align: justify;
+}
+
+/* --------------------------------------------------BIRTHDAY SECTION -----------------------------------*/
+
+.birthday-container {
+  padding: 20px 0 100px 0;
+  border: 1px solid transparent;
+  background-color: var(--color-white);
+  margin: 30px 0 0 0;
+  border-radius: 4px;
+}
+
+.birthday-container h3 {
+  text-align: center;
+  color: var(--color-black);
+}
+
+.birthday-card {
+  width: 25%;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px #cecece;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: flex;
+  padding: 10px;
+  background-color: var(--color-white);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-birthday-cake {
+  color: var(--color-white);
+  font-size: 0.6em;
+  background-color: var(--color-primary);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.birthday-card p {
+  color: var(--color-black);
+}
+
+/* ---------------------------CHURCH PASTORS CORNER-----------------*/
+
+.pastors-container {
+  padding: 20px 0 100px 0;
+  border: 1px solid transparent;
+  background-color: var(--color-primary);
+  margin: 30px 0 0 0;
+  border-radius: 4px;
+}
+
+.pastors-container h3 {
+  text-align: center;
+  color: var(--color-white);
+}
+
+.pastors-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.pastors-card {
+  width: 25%;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px var(--color-primary);
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--color-white);
+  justify-content: space-between;
+}
+
+.pastors-text p {
+  color: var(--color-black);
+  font-size: 0.8em;
+}
+
+.fa-quote-left {
+  color: var(--color-white);
+  margin: -30px 0 0 40%;
+  font-size: 1em;
+  background-color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px var(--color-primary);
+  z-index: 20;
+}
+
+.pastors-title {
+  font-size: 0.8em;
+  color: black;
+  font-weight: bold;
+  text-align: justify;
+  border: 1px solid red;
+}
+
+.pastors-location i {
+  color: var(--color-primary);
+  font-size: 1.2em;
+}
+
+/* --------------------------PHOTO GALLERIES-----------------*/
+
+.gallery {
+  padding: 20px 0 100px 0;
+  border: 1px solid transparent;
+  margin: 30px 0 0 0;
+  border-radius: 4px;
+}
+
+.gallery h3 {
+  text-align: center;
+  color: var(--color-black);
+}
+
+.gallery-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  flex-direction: column;
+}
+
+.mySlides {
+  display: none;
+  transition: all 0.5s;
+  
+}
+
+.mySlides img {
+  vertical-align: middle;
+  width: 100%;
+  height:350px;
+  
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width:400px;
+  position: relative;
+  margin: auto;
+  height: 350px;
+  border: 1px solid transparent;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration:0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+    transform: scale(1);
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
 }
 
 /* ---------------------------CONTACT ME-----------------*/
 
 .contact-me {
   background-color: #191919;
-  height: 300px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -489,69 +855,188 @@ h4 {
 }
 
 .contact-me .button-two:hover {
-  border: 1px solid var(--color-primary);
+  border: 3px solid var(--color-primary);
   padding: 10px 30px;
   border-radius: 4px;
   transition: 0.4s;
   background-color: unset;
 }
 
-footer {
-  padding: 100px 0;
-  width: 100%;
-  background-color: #101010;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+
+/* --------------------------------------------------BLOG SECTION -----------------------------------*/
+
+.blog-container {
+  padding: 20px 0 100px 0;
+  border: 1px solid red;
+  margin:0;
+  border-radius: 4px;
 }
 
-footer p:nth-child(1) {
-  font-weight: bold;
-  color: white;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-footer p:nth-child(2) {
-  color: var(--indigo);
-  font-size: 16px;
-  line-height: 27px;
-  margin-bottom: 25px;
+.pseudo-white {
   text-align: center;
-  width: 100%;
-  font-weight: bold;
-}
-
-.social {
-  border: 1px solid transparent;
-  display: block;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  color: black;
+  font-size: 1.1rem;
+  border: 1px solid transparent;
+}
+.blog-container h3 {
+  text-align: center;
+  color: black;
 }
 
-.social a {
-  color: var(--color-white);
-  background-color: black;
-  font-size: 1.7em;
-  border: 1px solid #101010;
-  border-radius: 50%;
+.blog-container .blog-p {
+  font-size: 0.8em;
+  margin: 60px 0 0 40px;
+  font-family: "gantari", sans-serif;
+}
+
+.blog-box {
+  border: 1px solid yellow;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.blog-card {
+  display: flex;
+  border: 1px solid transparent;
+  margin: 20px 20px 0 30px;
+  height:400px;
+  width: 60%;
+  flex-direction: column;
+  border-radius: 5px;
+  background: var(--color-white);
+  box-shadow: 0 0 10px #cecece;
+}
+.con-text {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+  width: 100%;
+  margin: 10px 0 0 0;
+  text-align: center;
   padding: 10px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 0 0 0 5px;
 }
-.end {
-  color: white;
-  font-size: 1em;
-  font-weight: bold;
-  bottom: 35px;
+
+.card-photo {
+  position: relative;
+  height: 200px;
+  border: 1px solid red;
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-photo img {
+  width: 100%;
+  padding: 0;
+  height: 200px;
   border: 1px solid transparent;
+}
+/*
+.card-photo i {
+  padding: 20px;
+  background: var(--color-primary);
+  border-radius: 50px;
+  margin: 40px 0 0 0;
+  color: black;
+  font-size: 1.5em;
+}
+*/
+.i-do {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.do {
+  font-size: 0.8em;
+  margin-top: 7px;
+  font-weight: light;
+  text-align: justify;
+}
+
+/* -------------------------FOOTER-------------------*/
+
+.footer {
+  display: flex;
+  position: relative;
+  border: 1px solid #cecece;
+  background-color: white;
+  margin-top:0;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  padding: 50px 0;
+  justify-content: space-around;
+}
+
+.footer-logo {
+  width: 100%;
+  border: 1px solid transparent;
+  width: 200px;
+  height: 60px;
+}
+
+.first-box,
+.second-box,
+.third-box {
+  width: 50%;
+  border: 1px solid transparent;
+  margin: 20px;
+  height: 250px;
+}
+
+.footer-head {
+  font-weight: bold;
+  color: green;
+}
+.footer ul li {
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  translate: all 300ms ease;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.footer ul li h3 {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  color: var(--color-black);
+}
+
+li .buy-now {
+  text-align: center;
+  background-color: green;
+  border: 1px solid transparent;
+  padding: 5px 30px;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.footer-icon-li {
+  border: 1px solid transparent;
+}
+
+.footer-icon {
+  color: green;
+  margin: 10px;
+}
+
+.footer {
+  font-size: 0.8em;
+}
+
+.third-box ul li h3 {
+  font-size: 1em;
 }
 
 /* not really necessary,well just for smaller desktop and for larger tablet though
