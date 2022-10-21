@@ -75,7 +75,9 @@
 
 body {
   height: 100%;
+  border: 1px solid red;
 }
+
 
 .hero {
   height: 100vh;
@@ -516,15 +518,16 @@ div.event-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .card-service {
   display: flex;
   border: 1px solid transparent;
-  margin: 20px 0 0 30px;
+  margin: 20px 10px 10px 30px;
   padding: 10px;
   height: 300px;
-  width: 70%;
+  width: 50%;
   flex-direction: column;
   border-radius: 5px;
   background: #101010;
@@ -627,18 +630,116 @@ div.event-title {
 
 /* ---------------------------SERMONS-----------------*/
 
+
+.sermon-container {
+  padding: 20px 0 100px 0;
+  border: 1px solid transparent;
+  background-color: white;
+  margin: 30px 0 0 0;
+  border-radius: 4px;
+}
+
+.sermon-container h3 {
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.sermon-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.sermon-card {
+  height: 370px;
+  width:25%;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px #cecece;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:10px;
+  justify-content: space-between;
+}
+
+.sermon-first {
+  width:50%;
+  margin: 0;
+  border: 1px solid transparent;
+  background-color: #f7e8f0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
 .fa-headphones {
   color: var(--color-white);
-  font-size: 0.6em;
-  background-color: var(--color-primary);
-  width: 25px;
-  height: 25px;
+  margin: -15px 0 0 40%;
+  font-size: 1em;
+  background-color: var(--color-black);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
+.sermon-first .sermon-date {
+  height: 70%;
+  width: 100%;
+  border: 1px solid transparent;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.sermon-first .sermon-time {
+  height:50px;
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 5px 5px;
+}
+
+.sermon-second {
+  width:90%;
+  border: 1px solid transparent;
+}
+
+div.sermon-title {
+  font-size: 1.2em;
+  color: black;
+  font-weight: bold;
+}
+
+.sermon-location {
+  font-size: 1em;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sermon-location i {
+  color: var(--color-primary);
+  font-size: 1.2em;
+}
+
 
 
 
@@ -863,22 +964,23 @@ div.event-title {
   color: black;
 }
 
+.officer-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
 .officer-container .officer-p {
   font-size: 0.8em;
   margin: 60px 0 0 40px;
   font-family: "gantari", sans-serif;
 }
 
-.officer-box {
-  border: 1px solid transparent;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .officer-card {
   display: flex;
-  border: 1px solid transparent;
+  border: 1px solid red;
   margin: 20px 20px 0 30px;
   height:400px;
   width: 300px;
@@ -888,7 +990,6 @@ div.event-title {
 }
 .officer-text {
   display: flex;
-  flex-direction: column;
   border: 1px solid red;
   width: 100%;
   margin: 10px 0 0 0;
@@ -912,7 +1013,6 @@ div.event-title {
 }
 
 .officer-p {
-  margin-top:5px;
   font-size: 1em;
   color: var(--color-black);
   font-weight: bold;
@@ -930,6 +1030,9 @@ div.event-title {
   align-items: center;
   justify-content: center;
   color: var(--color-white);
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 
 .contact-me p {
@@ -937,6 +1040,7 @@ div.event-title {
   font-weight: bold;
   margin-bottom: 25px;
   text-align: center;
+  width: 80%;
 }
 
 .contact-me .button-two {
@@ -1124,6 +1228,7 @@ li .buy-now {
 .third-box ul li h3 {
   font-size: 1em;
 }
+
 
 /* not really necessary,well just for smaller desktop and for larger tablet though
 */
