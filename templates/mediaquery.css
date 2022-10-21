@@ -1,32 +1,223 @@
-
-/* ---------------------------MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES-----------------*/
-@media screen and (max-width:900px) {
-    header ul{
-        display:flex;
-        flex-direction:column;
-        width:100%;
-        position:absolute;
-        top:50px;
-        height:100vh;
-        background-color: var(--color-white);
-        left:-100%;
-        }
-
-    header ul li{
-        padding:20px;
-        border:1px solid transparent;
-            }   
+/* ---------------------------MEDIA QUERY FOR SMALL DESKTOPS AND TABLET-----------------*/
+@media screen and (max-width: 899px) {
+    header ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 50px;
+      height: 100vh;
+      background-color: var(--color-white);
+      left: -100%;
+    }
+  
+    header ul li {
+      padding: 20px;
+      border: 1px solid transparent;
+    }
+  
+    .logo {
+      font-size: 25px;
+      letter-spacing: 0;
+  
+      margin-left: 20px;
+    }
+  
+    .bars {
+      display: block;
+    }
+  
+  /* --------------------------------------------------ABOUT ME SECTION-----------------------------------*/
+  
+  
+  .about-box-container {
+      display: flex;
+      flex-direction: column-reverse;    
+  }
+  
+  
+  /* --------------------------------------------------EVENT BOX-----------------------------------*/
+  
+  .event-box {
+      flex-wrap: none;
+    }
     
-    .logo{
-        font-size: 25px;  
-        letter-spacing:0;
-       
-        margin-left:20px;
-               }
-            
-
-    .bars{
-        display: block;
-              }       
-
-}
+    .event-card {
+      width:90%;
+    }
+  
+    /* --------------------------------------------------SERVICE SECTION -----------------------------------*/
+  
+    .service-container {
+       flex-direction: column; 
+    }
+  
+  /* --------------------------------------------------BIRTHDAY SECTION -----------------------------------*/
+  .birthday-card {
+      width:50%;
+  }    
+  
+  /* ---------------------------------------------------SERMONS-------------------------------------------*/
+  
+  .sermon-box {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .sermon-card {
+      width:50%;
+    }
+    
+    .pastors-card {
+      width:50%;
+    }
+  
+    /* --------------------------------------------------BLOG SECTION -----------------------------------*/
+  
+    .blog-box {
+     flex-direction: column;
+    }
+    
+    .blog-card {
+      width: 50%;
+    }
+  
+  /* --------------------------------------------------FOOTER SECTION -----------------------------------*/
+    .footer{
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .first-box{
+   width:100%;
+   margin:5px;
+   height:250px;
+  }
+  
+  .second-box, .third-box{
+      width:100%;
+      margin:5px;
+      height:150px;
+     }
+  
+  li .buy-now{
+   margin:0 0 0 -10px;
+   background-color: var(--color-green);
+   border:1px solid transparent;
+   padding: 5px 30px;
+   color: white;
+   font-weight: bold;
+   border-radius:4px;
+   display: flex;
+   cursor: pointer;
+  
+  }
+  
+  
+  }
+  
+  
+  /* ---------------------------MEDIA QUERY FOR MOBILE PHONES-----------------*/
+  @media screen and (max-width: 662px) {
+     
+    /* --------------------------------------------------ABOUT ME SECTION-----------------------------------*/
+    
+    .about-box-container {
+        display: flex;
+        flex-direction: column-reverse;    
+    }
+  
+    .about-box {
+      margin:10px;
+      width: 100%;
+      padding: 30px;
+      border: 1px solid transparent;
+    }
+  
+    .about-box-container .image-box img {
+      width:90%;
+    }
+    
+    
+    /* --------------------------------------------------EVENT BOX-----------------------------------*/
+    
+    
+  
+    
+      /* --------------------------------------------------SERVICE SECTION -----------------------------------*/
+      .card-service {
+          width: 80%;
+        }
+    
+    /* --------------------------------------------------BIRTHDAY SECTION -----------------------------------*/
+    .birthday-card {
+        width:80%;
+    }    
+    
+    /* ---------------------------------------------------SERMONS-------------------------------------------*/
+    
+    .sermon-box {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .sermon-card {
+        width:90%;
+      }
+      
+      audio{
+          width: 90%;
+      }
+  
+       /* ---------------------------------------------------PASTORS CORNER-------------------------------------------*/
+      .pastors-card {
+        width:70%;
+      }
+  
+     
+    
+      /* --------------------------------------------------BLOG SECTION -----------------------------------*/
+    
+      .blog-box {
+       flex-direction: column;
+      }
+      
+      .blog-card {
+        width: 80%;
+      }
+    
+    /* --------------------------------------------------FOOTER SECTION -----------------------------------*/
+      .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .first-box{
+     width:100%;
+     margin:5px;
+     height:250px;
+    }
+    
+    .second-box, .third-box{
+        width:100%;
+        margin:5px;
+        height:150px;
+       }
+    
+    li .buy-now{
+     margin:0 0 0 -10px;
+     background-color: var(--color-green);
+     border:1px solid transparent;
+     padding: 5px 30px;
+     color: white;
+     font-weight: bold;
+     border-radius:4px;
+     display: flex;
+     cursor: pointer;
+    
+    }
+    
+    
+    }
+    
+  
