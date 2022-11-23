@@ -18,7 +18,7 @@ require '../Includes/db.inc.php';
    public function login($email,$password){
     try{
        
-         $sql="SELECT * FROM members WHERE email =:email";
+         $sql="SELECT * FROM administrator WHERE email =:email";
          $stmt= $this->db->prepare($sql);
          $stmt->bindParam(':email', $email);
          $stmt->execute();
