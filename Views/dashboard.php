@@ -52,7 +52,7 @@
 
         <div class="middle">
             <h3>DASHBOARD OVERVIEW</h3>
-            
+
            <div class="middle-content">
 
            <?php 
@@ -66,38 +66,11 @@
                    </div>
                </div>
 
-           
-
-
+          
            </div>
            
            <div class="stats">
-               <p>DATE OF LAST ORDER:
-               <?php 
-                $stmt=$dashboardInstance->lastOrder();
-                $lastdata=$stmt->fetch(PDO::FETCH_ASSOC);
-                $date= date('D,F j Y',  strtotime($lastdata['created_at']));
-               echo "{$date} ordered by {$lastdata['customers_name']}";
-             
-              // // }
-              ?>     
-            </p>
-               <p>HIGHEST PAYMENT MADE: 
-               <?php 
-                $stmt=$dashboardInstance->highestPayment();
-                $highestpay=$stmt->fetch(PDO::FETCH_ASSOC);
-                echo "{$highestpay['amount']} paid by {$highestpay['customers_name']}" 
-              ?> 
-               </p>
-               <p>LOWEST PAYMENT MADE:
-               <?php 
-                $stmt=$dashboardInstance->lowestPayment();
-                $lowestpay=$stmt->fetch(PDO::FETCH_ASSOC);
-                echo "{$lowestpay['amount']} paid by {$lowestpay['customers_name']}" 
-
-              ?> 
-               </p>
-               <p></p>
+              
            </div>
 
 </div>
